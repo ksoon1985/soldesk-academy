@@ -32,7 +32,7 @@
    <init-param>
       <description>Model2 Task Properties</description>
       <param-name>configProperty</param-name>
-      <param-value>C:/study/workspace/jspEx/src/model2/board/Command.properties</param-value>
+      <param-value>C:/study/soldesk_git/jspEx/src/model2/board/Command.properties</param-value>
    </init-param>
 </servlet>
 
