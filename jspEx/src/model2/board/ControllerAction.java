@@ -75,8 +75,8 @@ public class ControllerAction extends HttpServlet {
       //키를 명령에 저장하고, value있는것을 파일로 오픈해서 읽게 하기
       //해당되는 클래스는 공통에 메소드가 있어서 그걸 처리하는 명령
       while(key.hasNext()) {
-         String command = (String) key.next();
-         String className = pr.getProperty(command);
+         String command = (String) key.next(); // 		/list.do , /writeForm.do ...
+         String className = pr.getProperty(command); //  model2.board.action.ListAction
          try {
         	 
             Class commandClass = Class.forName(className);
