@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<!-- 
+	textarea 태그는 여러줄을 입력할 수 있는 박스를 표시
+	cols 와 rows 로 크기를 지정 
+	
+ -->
+
+<body>
+	<form action="html_019.jsp" method="post">
+		<h3>TextArea 여러라인 입력</h3>
+		<textarea name="other" rows="10" cols="30">기타 의견을 입력하세요.
+		</textarea><br/>
+		
+		<!-- disabled : 비활성화  -->
+		<textarea name="other2" rows="10" 
+		disabled="disabled" cols="30">기타 의견을 입력하세요.
+		</textarea>
+		
+		<input type="submit" value = "commit"/>
+		<input type="reset" value = "reset"/>
+		
+	</form>
+</body>
+</html>

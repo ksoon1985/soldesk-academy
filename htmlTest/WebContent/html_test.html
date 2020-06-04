@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel= "stylesheet" type="text/css" href="html_test.css">
+
+</head>
+<body>
+	
+	<h3>기본정보 입력</h3>
+	
+	<form>
+	<table border="1">
+		<tr>
+			<th><label for="name">이름</label></th>
+			<td><input type="text" name="id" id="name"/></td>
+		</tr>
+		<tr>
+			<th><label for="id">아이디</label></th>
+			<td>
+			<input type="text" name="id" id="id"/>
+			<button type="button" name="duplication">중복체크</button>
+			</td>
+		</tr>
+		<tr>
+			<th><label for="password">비밀번호</label></th>
+			<td><input type="text" name="password" id="password"/></td>
+		</tr>
+		<tr>
+			<th><label for="password2">비밀번호확인</label></th>
+			<td><input type="text" name="password2" id="password2"/></td>
+		</tr>
+		<tr>
+			<th><label for="email">이메일</label></th>
+			<td><input type="text" name="email" id="email"/>
+			@
+			<select name="select_email">
+					<option>선택하세요</option>
+					<option value="naver.com">naver.com</option>
+					<option value="daum.net">daum.net</option>
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<th><label for="phoneNum">연락처</label></th>
+			<td><input type="text" name="pnoheNum" 
+			id="phoneNum" size="10"/></td>
+			<!-- size , style="width:150px" -->
+		</tr>
+		<tr>
+			<th>메일수신여부</th>
+			<td>
+			<input type="radio" name="mailGet"/>받음
+			<input type="radio" name="mailGet"/>받지 않음
+			</td>
+		</tr>
+		<tr>
+			<th>관심분야</th>
+			<td>
+			<input type="checkbox" name="interest"/>자바
+			<input type="checkbox" name="interest"/>C++
+			<input type="checkbox" name="interest"/>파이썬
+			<input type="checkbox" name="interest"/>안드로이드
+			</td>
+		</tr>
+	</table>
+	<p>
+	<button type="reset">취소</button>
+	<button type="submit">저장</button>
+	</p>
+	</form>
+</body>
+</html>
