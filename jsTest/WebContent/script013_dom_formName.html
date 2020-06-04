@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function process(){
+	var fname = document.frm.fname;// input 요소
+	console.log(fname.value); // 사용자가 입력한 input 요소의 value값
+	console.log(fname.defaultValue); // input 요소의 value값
+	return false; // 기본은 true
+}
+</script>
+</head>
+<body>
+
+<!--
+document.frm.fname ->
+ form 의 name이 frm 인 곳으로 들어가서 name이 fname인 요소를 가져온다
+  -->
+<form name="frm">
+	<label for="fname">이름</label>
+	<input type="text" name="fname" id="fname" value="이름..."/>
+	<button onclick="return process();">click</button>
+	<!--             리턴값을 받겠다. -->
+</form>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>research2</title>
+
+<script type="text/javascript">
+var ok = false;
+
+window.onload = function(){
+
+	var backBtn = document.getElementById("backBtn");
+	var answerBtn = document.getElementById("answerBtn");
+	var input = document.getElementsByTagName("input");
+	
+	backBtn.addEventListener("click",back,false);
+	answerBtn.addEventListener("click",answer,false);
+	
+	function check(){
+		console.log("check 실행 ");
+		for(var i = 0; i<input.length; i++)
+		{
+			if(input[i].checked ==true)
+				ok = true;
+		}
+	}
+
+	function back(){
+		document.log_g.action="./script047_research.html";
+	}
+	function answer(){
+		check();
+		if(!ok){
+			window.alert("골라주세욤 ");
+			return false;
+		}
+		document.log_g.action="./script047_process.jsp";
+	}
+}
+</script>
+
+</head>
+<body>
+<p>2. 줄바꿈을 위한 요소는 무엇인가>?</p>
+<!-- 정답 1번  -->
+<form name = "log_g" action="#" method="post"> 
+<input type="radio" name="program2" value="BR"/>(1)BR &nbsp;
+<input type="radio" name="program2" value="DIV"/>(2)DIV &nbsp;
+<input type="radio" name="program2" value="SPAN"/>(3)SPAN &nbsp;
+<input type="radio" name="program2" value="MENU"/>(4)MENU &nbsp;
+<br/>
+<br/>
+<button id="backBtn">이전</button>
+<button id="answerBtn">정답풀이</button>
+</form>
+
+</body>
+</html>

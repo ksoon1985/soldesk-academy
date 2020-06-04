@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="frm">
+		<button id="first">first</button> <!-- script023_first.jsp -->
+		<button id="second">second</button> <!-- script023_first.jsp -->
+		<button id="third">third</button> <!-- script023_first.jsp -->
+	</form>
+	
+<script type="text/javascript">
+var fButton = document.getElementById("first"); // [object HTMLButtonElement]
+var sButton = document.getElementById("second");
+var tButton = document.getElementById("third");
+
+fButton.onclick = function(){
+	document.frm.action = "./script023_first.jsp";
+};
+
+sButton.onclick = function(){
+	document.frm.action = "./script024_second.jsp";
+};
+
+tButton.onclick = function(){
+	document.frm.action = "./script025_third.jsp";
+};
+
+
+
+</script>
+</body>
+</html>

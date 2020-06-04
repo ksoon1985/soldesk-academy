@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>content1</p>
+	<p>content2</p>
+	<p>content3</p>
+	<p>content4</p>
+	<p>content5</p>
+	
+	<script type="text/javascript">
+	var pNode = document.getElementsByTagName("p");
+	console.log(pNode.length); //p 요소의 개수 : 5개 
+/* 	console.log(pNode.nodeName); // undefined */
+ 
+	console.log(typeof pNode); //object
+	console.log(pNode instanceof NodeList); // false
+	console.log(pNode instanceof HTMLCollection); // true
+	
+	console.log(pNode.item(0)); //<p style="color:red">content1</p>
+	console.log(pNode.item(0).nodeName);// P 
+	
+	console.log(pNode[0]); //<p style="color:red">content1</p>
+	console.log(pNode[0].nodeName);// P 
+	pNode[0].style.border = "2px solid green"
+	
+	for(var i in pNode)
+		pNode.item(i).style.color ="red";
+	
+	for(var i in pNode)
+		pNode[i].style.backgroundColor="yellow";
+	
+	</script>
+</body>
+</html>

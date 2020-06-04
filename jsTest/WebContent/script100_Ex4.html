@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(function(){
+ var topNum = $("h1").offset().top;
+ console.log(topNum);
+ $(window).scrollTop(topNum);
+ 
+ var sct = $(window).scrollTop();
+ console.log(sct);
+});
+</script>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	/* line-height:1; */
+}
+#wrap{
+	height:200px;
+	padding-top:100px;
+	
+}
+</style>
+</head>
+<body>
+<div id="wrap">1
+	<h1>위치 메서드 </h1>
+</div>
+</body>
+</html>

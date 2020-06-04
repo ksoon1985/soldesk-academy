@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+	input type : submit -> document.log_f.onsumit = function(){} //조건설정해줄라고 
+	input type : button -> btn.onclick(){ document.log_f.submit(); 필수 !!}
+	button 	 			-> button.onclick(){}
+	input type : image  -> imgbtn.onclick(){}
+ -->
+<form name="log_f" method="get" action="./script021_process.jsp">
+	<fieldset>
+	<legend>회원 로그인</legend>
+	<label for="my_id">아이디</label>
+	<input type="text" name="my_id" id="my_id"/>
+	<label for="my_pass">패스워드 </label>
+	<input type="password" name="my_pass" id="my_pass"/>
+	
+	<!-- <input type="submit" value="login"/>  -->
+	<!-- <input type="button" value="login" id="btn" />   -->
+	<!-- <button value="login">login</button> -->
+	<input id="imgbtn" type="image" src="images/signin.gif"/>
+	
+	<!-- submit 이벤트 => action="./script021_process.jsp" 페이지 요청이 됨  -->
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+/*---------------------------------------------------------------------------*/
+// form 의 name(log_f)
+// submit을 누르면 
+/*
+document.log_f.onsubmit=function(){
+var idNode = document.getElementById("my_id");
+var passNode = document.getElementById("my_pass");
+if(idNode.value == ""){
+	alert("아이디를 입력하세요."); // window.alert (window 생략 가능)
+	return false;
+}
+
+if(passNode.value == ""){
+	alert("비밀번호를 입력하세요."); // window.alert (window 생략 가능)
+	return false;
+}
+
+};
+*/
+
+/*---------------------------------------------------------------------------*/
+/* var btn = document.getElementById("btn");
+var button = document.getElementsByTagName("button")[0];
+
+btn.onclick=function(){
+//button -> 자동적으로 submit 실행 -> document.log_f.submit()안해도 됨
+
+var idNode = document.getElementById("my_id");
+var passNode = document.getElementById("my_pass");
+
+if(idNode.value == ""){
+	alert("아이디를 입력하세요."); // window.alert (window 생략 가능)
+	return false;
+}
+
+if(passNode.value == ""){
+	alert("비밀번호를 입력하세요."); // window.alert (window 생략 가능)
+	return false;
+}
+// 여기까진 submit 이 안댐 
+
+document.log_f.submit(); // form에 있는 값을 강제적으로  submit 실행 
+}; */
+
+var imgbtn = document.getElementById("imgbtn");
+imgbtn.onclick=function(){
+	var idNode = document.getElementById("my_id");
+	var passNode = document.getElementById("my_pass");
+
+	if(idNode.value == ""){
+		alert("아이디를 입력하세요."); // window.alert (window 생략 가능)
+		return false;
+	}
+
+	if(passNode.value == ""){
+		alert("비밀번호를 입력하세요."); // window.alert (window 생략 가능)
+		return false;
+	}
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<div id="wrap"><p id="p1">content1</p><p id="p2">content2</p><p id="p3">content3</p>
+	</div>
+	
+	<script type="text/javascript">
+	var pNode2 = document.getElementById("p2");
+	document.write(pNode2);
+	
+	document.getElementById("p2").parentNode.style.color="blue";
+	// -> div 모든 자식 요소에 blue 색상 
+	document.write(pNode2.previousSibling);
+	pNode2.previousSibling.style.fontSize = "20px"; // 이전
+	pNode2.nextSibling.style.border="1px solid black"; // 다음
+	
+	// pre , next 사용시 엔터(#text) 값 안가져오게 주의 !  !  !
+	</script>
+</body>
+</html>

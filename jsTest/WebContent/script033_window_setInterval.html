@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var i=0;
+window.onload=function(){
+	//setInterval("실행할 스크립트",시간간격);
+	// 일정한 시간 간격으로 실행한 스크립트를 반복하여 실행 시킬 때
+	
+	/* var auto = window.setInterval("console.log(i++)",3000);
+	 */
+	
+	var auto = window.setInterval(function(){
+		var pNode = document.getElementById("cnt");
+		pNode.innerText = i++; // 0부터
+		// 				  ++i     1부터 
+
+	},1000);
+	
+	document.getElementById("stop").onclick=function(){
+		// window.clearInterval("참조변수");
+		//auto 에 참조되어 있는 setInterval() 을 삭제한다.
+		window.clearInterval(auto);
+	};
+	
+}
+</script>
+</head>
+<body>
+	<p id="cnt">&nbsp;</p>
+	<button id="stop">정지버튼</button>
+	
+</body>
+</html>

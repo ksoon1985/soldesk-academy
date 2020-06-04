@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+/*  
+ 함수 정의 방법
+ 1. function 키워드를 이용
+ 	function 함수명(매개변수1...){
+	실행할 문장;
+	return 반환값;
+	}
+ */
+ var i = 0;
+ function func(){
+	 i++;
+	 document.write("hellow"+i);
+ }
+ 
+ func();
+ document.write("<br/>");
+ 
+ /*
+ 2. 함수리터널을
+ 	var 변수명 = function(매개변수...){실행문장; return;}
+ 	
+ */
+ 
+ var test = function(x){
+	 return "hellow "+x;
+ }
+ 
+ var process = function(){
+	 document.write("process:");
+ }
+	 
+ document.write(test); //function(x){ return "hellow "+x; }
+ document.write("<br/>");
+ document.write(test("world") + "<br/>");
+ 
+ document.write(process + "<br/>");
+ document.write(process() + "<br/>"); // process: undefined
+ process(); // process:
+ document.write("<br/>");
+/*
+3. Function객체를 이용
+var 함수명 = new Function(매개변수1 ... , 함수본체);
+ 호출 : 함수명(매개변수 값...);
+*/
+var fn = new Function("x","y","return x+y");
+document.write(fn(1,2));
+
+</script>
+</body>
+</html>

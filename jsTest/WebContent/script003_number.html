@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function process(){
+		var dan = document.getElementById("dan");//  -> input 객체 
+		console.log(typeof dan.value);
+		dan = parseInt(dan.value);
+		for(let i = 1; i<=9;i++)
+			document.write(dan+" * "+ i+"="+(dan*i)+"<br/>");
+		
+	}
+</script>
+</head>
+<body>
+	<span>단입력 : </span>
+	<input type="text" id="dan"/>
+	<button onclick='process()'>click</button>
+	
+</body>
+</html>

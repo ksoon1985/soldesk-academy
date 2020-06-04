@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("button").click(process);
+	});
+	
+
+	function process(){
+		// this - event 를 일으킨 객체 자신 
+		document.write(this + "<br/>"); // dom 형태 
+		document.write($(this) + "<br/>"); // jquery  형태 
+		
+		// dom에서 제공되는 property : parentNode , nodeName , tagName
+		// jquery 에서 제공되는 property : parent() , $.nodeName(el,name)
+		document.write(this.parentNode + this.parentNode.nodeName + "<br/>"); // body
+		document.write(this.parentNode.tagName + "<br/>"); // body
+		// jqery 형태를 가져와서 dom [0]으로 표현해준후  dom property 에 접근 
+		document.write($(this).parent()[0].nodeName + "<br/>");
+		document.write($(this).parent()[0].tagName + "<br/>");
+		
+		document.write($(this).parent().nodeName());
+		
+		// https://developers.kakao.com/docs/latest/ko/local/dev-guide 
+		// 다음 api
+		
+		
+	};
+</script>
+</head>
+<body>
+<button id="btn">commit</button>
+</body>
+</html>

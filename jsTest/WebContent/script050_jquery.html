@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	// window.onload = function(){ } 와 같음 
+	$("*").css({"margin":"0px" , "padding":"0px","border-size":"0px"});
+	$("div").css("background-color","green").css("border","2px solid blue");
+	// 체이닝 기법 
+	
+	$("#line").css("color","blue");
+	$(".common").css({"border":"1px solid black"});
+	$("a[href]").css({"color":"red"});
+	// a 라는 요소에 href 라는 속성이 있을 때 
+	
+	$("p").click(function(){
+		$(this).hide();
+	
+	
+	});
+	
+	
+});
+</script>
+</head>
+<body>
+<div>
+	<p id="line">line</p>
+	<p class="common">common</p>
+	<a href="#">korea</a>
+</div>
+
+
+</body>
+</html>

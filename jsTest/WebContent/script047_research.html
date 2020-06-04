@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>research</title>
+<style type="text/css">
+#dv{
+	display:none;
+}
+</style>
+
+<script type="text/javascript">
+var ok = false;
+
+window.onload = function(){
+
+	var nextBtn = document.getElementById("nextBtn");
+	var answerBtn = document.getElementById("answerBtn");
+	var input = document.getElementsByTagName("input");
+	
+	nextBtn.addEventListener("click",next,false);
+	answerBtn.addEventListener("click",answer,false);
+	
+	function check(){
+		for(var i = 0; i<input.length; i++)
+		{
+			if(input[i].checked ==true)
+				ok = true;
+		}
+	}
+
+	function next(){
+		document.log_g.action="./script047_research2.html";
+	}
+	function answer(){
+		check();
+		if(!ok){
+			window.alert("골라주세욤 ");
+			return false;
+		}
+		document.log_g.action="http://localhost:8090/jsTest/script047_process.jsp";
+	}
+}
+
+ 
+</script>
+</head>
+<body>
+<p>1. 클라이언트 프로그램이 아닌 거슨?</p>
+<!-- 정답 2번 -->
+<form name="log_g" action="#" method="post"> 
+<input type="radio" name="program" value="HTML"/>(1)HTML &nbsp;
+<input type="radio" name="program" value="ORACLE"/>(2)ORACLE &nbsp;
+<input type="radio" name="program" value="CSS"/>(3)CSS &nbsp;
+<input type="radio" name="program" value="JAVASCRIPT"/>(4)JAVASCRIPT &nbsp;
+
+<br/>
+<br/>
+<button id="nextBtn">다음</button>
+<button id="answerBtn">정답풀이</button>
+</form>
+
+</body>
+</html>

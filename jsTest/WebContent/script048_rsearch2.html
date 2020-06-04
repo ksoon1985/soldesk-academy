@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#dv{
+	display:none;
+}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	document.getElementById('backBtn').onclick=function(){
+		document.log_g.action="script048_research.html";
+	};
+	document.getElementById("answerBtn").onclick=function(){
+
+		if(s)
+		{
+			document.getElementById("dv").style.border="1px solid purple";
+			document.getElementById("dv").style.display="block";
+			s = false;
+			return false;
+		}else
+		{
+			document.getElementById("dv").style.border="0px";
+			document.getElementById("dv").style.display="none";
+			s = true;
+			return false;
+		}
+	};
+}
+</script>
+</head>
+<body>
+<div id="wrap">
+<p>2. 줄바꿈을 위한 요소는 무엇인가>?</p>
+<!-- 정답 1번  -->
+<form name = "log_g" action="#" method="post"> 
+<input type="radio" name="program2" value="BR"/>(1)BR &nbsp;
+<input type="radio" name="program2" value="DIV"/>(2)DIV &nbsp;
+<input type="radio" name="program2" value="SPAN"/>(3)SPAN &nbsp;
+<input type="radio" name="program2" value="MENU"/>(4)MENU &nbsp;
+<br/>
+<br/>
+<button id="backBtn">이전</button>
+<button id="answerBtn">정답풀이</button>
+</form>
+</div>
+<div id="dv">
+	<p>정답 2 </p>
+</div>
+</body>
+</html>

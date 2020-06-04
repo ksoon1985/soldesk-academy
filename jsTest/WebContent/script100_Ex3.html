@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script type="text/javascript">
+
+/* $(function(){
+	$("*").css("border","1px solid blue");
+});
+
+ */
+ $(function(){
+		$("ul").css("border","1px solid blue");
+		$("#wrap").css("color","red");
+		$(".txt + p").css("color","red");
+		$(".doit").closest("div").css("border","2px solid black");
+	});
+ 
+ </script>
+</head>
+<body>
+<h1>제이쿼리</h1>
+<h2>선택자</h2>
+<h3>직접 선택자</h3>
+<ul>
+	<li>리스트1
+		<ul>
+			<li>리스트1-1</li>
+		</ul>
+	</li>
+	<li>리스트2</li>
+	<li>리스트3</li>
+</ul>
+
+<div>
+	<div id="wrap">
+		<p>1</p>
+		<p>2</p>
+		<section>
+			<p>3</p>
+		</section>
+	</div>
+</div>
+<hr/>
+
+<div>
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+	<p class="txt">4</p>
+	<span>4.5</span>
+	<p>5</p>
+</div>
+<div>
+	<div>2</div>
+<div>
+	<p class="doit">1</p>
+</div>
+</div>
+
+</body>
+</html>

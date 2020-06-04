@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* 부모의 height 값은 자식의 height 으로 부터 영향을 받음  */
+*{
+	margin:0;
+	border-left:0;
+	padding:0;
+}
+li{
+	list-style:none;
+}
+
+a{
+	text-decoration:none;
+	color:#000;
+}
+#gallery{
+	width:350px;
+	margin:30px auto;
+	border: 1px solid #999;
+}
+
+#gallery h1{
+	text-align : center;
+}
+#gallery img{
+	border : 1px solid #666;
+}
+
+/* 메인 이미지 */
+#gallery #photo{
+	text-align : center;
+}
+/* 서브이미지 ul 요소  */
+#gallery ul{
+	width:800px;
+	margin:0 auto;
+	background-color:aqua;
+}
+/* 서브이미지 ul 의 li 요소  */
+#gallery ul li{
+	width:100px;
+	float : left;
+	text-align:center;
+}
+
+/* 서브이미지 리스트 틀  */
+#photo_list{
+	width:300px;
+	margin:10px auto;
+	overflow:hidden; 
+}
+
+.btn_wrap{
+	clear : both;
+	text-align:center;
+}
+
+.btn_wrap a{
+	font-weight:bolder;
+	font-size:25px;
+}
+</style>
+
+<script type="text/javascript">
+	window.onload= function(){
+	/* ①포토 목록에 작은 이미지를 클릭 했을 때 큰 이미지를 바꿉니다. */
+	var ul_zone = document.getElementById("inner_list")
+	var li_zone = ul_zone.children; // 8개
+
+	for(var i=0;i<li_zone.length;i++)
+	{
+		li_zone[i].children[0].onclick = function(e){
+			var ph = document.getElementById("photo").children[0];
+			ph.src = this.href; //li_zone[i].children[0]
+			
+			/* e.preventDefault(); // a를 클릭했을 때 링크가 되지 않도록 한다.
+			 */
+			return false;
+			// https://programmingsummaries.tistory.com/313  참고
+		};
+	}
+	
+	/* ②이전,다음 벝튼을 클릭할 때 마다 ul이 100px 만큼 증가 또는 감소되어 
+	좌우측으로 이동됩니다. */
+	//다음
+	var m_num = 0;
+	var b_btn = document.getElementById("next_btn");
+	b_btn.onclick = function(){
+		if(m_num>= li_zone.length -3){
+			return false;
+		}
+		
+		m_num++;
+		ul_zone.style.marginLeft= -100*m_num +"px";
+		
+		//<a>를 클릭했을 때 링크가 되지 않도록 한다.
+		return false;
+	};
+	//이전
+	var b_btn = document.getElementById("before_btn");
+	b_btn.onclick = function(){
+		if(m_num<= 0){
+			return false;
+		}
+		
+		m_num--;
+		ul_zone.style.marginLeft= -100*m_num +"px";
+		
+		//<a>를 클릭했을 때 링크가 되지 않도록 한다.
+		return false;
+	};
+};
+</script>
+</head>
+<body>
+	<div id="gallery">
+		<h1>동해안 갤러리</h1>
+		<p id="photo">
+			<img src="images/pic_1.jpg" width="320" alt="" />
+		</p>
+		<!-- width: 300px -->
+		<div id="photo_list">
+			<!-- width:800px -->
+			<ul id="inner_list">
+				<li><a href="images/pic_1.jpg"> <img
+						src="images/pic_t1.jpg" alt="사진1" /></a></li>
+				<li><a href="images/pic_2.jpg"> <img
+						src="images/pic_t2.jpg" alt="사진2" /></a></li>
+				<li><a href="images/pic_3.jpg"> <img
+						src="images/pic_t3.jpg" alt="사진3" /></a></li>
+				<li><a href="images/pic_4.jpg"> <img
+						src="images/pic_t4.jpg" alt="사진4" /></a></li>
+				<li><a href="images/pic_5.jpg"> <img
+						src="images/pic_t5.jpg" alt="사진5" /></a></li>
+				<li><a href="images/pic_6.jpg"> <img
+						src="images/pic_t6.jpg" alt="사진6" /></a></li>
+				<li><a href="images/pic_7.jpg"> <img
+						src="images/pic_t7.jpg" alt="사진7" /></a></li>
+				<li><a href="images/pic_8.jpg"> <img
+						src="images/pic_t8.jpg" alt="사진8" /></a></li>
+			</ul>
+		</div>
+		<p class="btn_wrap">
+			<a href="#" id="before_btn">&lt;</a> <a href="#" id="next_btn">&gt;</a>
+		</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<style type="text/css">
+*{
+	margin:0;
+	border:0;
+	padding:0;
+}
+header{
+	width:900px;
+	height:150px;
+	background-color:#ccc;
+	position:relative;
+}
+ul{
+	width:900px;
+	position:absolute;
+	
+}
+ul li{
+	display:block;
+	width:100px;
+	height:40px;
+	list-style-type:none;
+	float:left;
+	margin-right:20px;
+}
+
+ul li a{
+	margin-top:auto;
+	text-decoration:none;
+}
+
+aside{
+	width:250px;
+	height:300px;
+	background-color:aqua;
+	float: left;
+	clear:both;
+}
+table {
+	float:right;
+}
+
+section{
+	width:650px;
+	height:300px;
+	background-color:gray;
+	float:left;
+}
+
+footer{
+	width:900px;
+	height:30px;
+	background-color:yellow;
+	clear:both;
+}
+footer marquee p{
+	display:inline-block;
+	padding-top:5px;
+	padding-bottom:5px;
+	background-color:silver;
+}
+</style>
+</head>
+<body>
+	<header>
+		<img id='logo' src="images/bombit_logo.png" width="100px"
+			height="100px">
+		<ul>
+			<li><a href="#">메인</a></li>
+			<li><a href="#">공지사항</a></li>
+			<li><a href="#">자유게시판</a></li>
+			<li><a href="#">갤러리</a></li>
+			<li><a href="#">회원관리</a></li>
+			<li><a href="#">채팅하기</a></li>
+		</ul>
+	</header>
+	<aside>
+		<table id="login">
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" name="id" id='id'></td>
+			</tr>
+			<tr>
+				<td>패스워드</td>
+				<td><input type="password" name="pw" id='pw'></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: right"><input type="submit"
+					value="로그인"> <input type="reset" value="취소"></td>
+			</tr>
+		</table>
+	</aside>
+	<section class='content'></section>
+	<footer>
+		<marquee>
+			<p>Copyright ⓒ 1998-2019 Bombit Information Educational Institute
+				All Right Reserved</p>
+		</marquee>
+	</footer>
+</body>
+</html>

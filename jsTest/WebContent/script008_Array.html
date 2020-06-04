@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+var cars=["Saab","Volvo","BMW"];
+
+//					object 					true
+document.write(typeof cars + " " + (cars instanceof Array));
+document.write("<hr/>");
+var cars = new Array("Saab","Volvo","BMW");
+
+var person = ['john','doe',98];
+for(var index in person)
+	document.write(person[index]);
+document.write("<hr/>");
+
+var person2 = [];
+document.write(person2.length + "<hr/>");
+person2[0] = "java";
+person2[3] = "script"
+document.write(person2.length + "<hr/>");
+document.write(person2[2] + "<hr/>"); // undefined;
+
+//for와 for in 차이점  
+for(var index in person2)
+	document.write(index +":" +person2[index]); // java script
+document.write("<hr/>");
+for(var i=0;i<person2.length;i++)
+	document.write(i +":"+person2[i]); // java un.. un.. script
+
+document.write("<hr/>");
+	
+var point2 = new Array(10); // 크기가 10개인 배열 생성 
+document.write(point2.length); //10  
+document.write("<hr/>");
+for(var index=0;index<point2.length;index++)
+	document.write(index +":" + point2[index]);
+ 
+var point3 = new Array(1,2); // 크기가 2개 요소가 1,2인 배열 생성  
+document.write(point3.length); // 2
+document.write("<hr/>");
+for(var index=0;index<point3.length;index++)
+	document.write(index +":" + point3[index] +"&nbsp");
+
+/*
+ 	javascript Array
+ 	1. 서로 다른 데이터 타입을 배열의 요소로 저장할 수 있다.
+ 	2. new Array을 생성할 때 인자가 하나면 배열의 크기를 의미하고
+ 		인자가 2개 이상이면 요소 
+ 	3. 배열의 크기를 변결할 수 있다.
+ */
+ document.write("<hr/>");
+ 
+ var fruits = ["Banana", "Orange","Apple","Mango"];
+ document.write(fruits + "<br/>"); //Banana,Orange,Apple,Mango
+ document.write(fruits.toString() + "<br/>"); //Banana,Orange,Apple,Mango
+ document.write(typeof fruits + "<br/>"); // object
+ document.write(typeof fruits.toString() + "<br/>"); // string
+ document.write(fruits.push("Melon") + "<br/>" ); //그 다음 index 리턴 
+ document.write(fruits.pop() + "<br/>" ); //pop한 요소 리턴 
+ document.write(fruits.pop() + "<br/>" ); //pop한 요소 리턴 
+ document.write(fruits.length + "<br/>" ); 
+ 
+ var fruits2 = ["Banana", "Orange","Apple","Mango"];
+ document.write(fruits2.slice(1,3) + "<br/>" ); 
+ document.write(fruits2 + "<br/>" ); 
+ 
+ document.write("<hr/>");
+ 
+ var myGirls=["veie" , "lone"];
+ var myBoys =["emil","tois"];
+ var my = myGirls.concat(myBoys);
+ document.write(myGirls.concat(myBoys),"<br/>");
+ document.write(myGirls.concat(myBoys).length ,"<br/>");
+ document.write(my.sort() ,"<br/>"); // ab~ 가나다 ~순 
+ document.write(my ,"<br/>"); // ab~ 가나다 ~순 
+ // sort -> 파괴적 함수 
+ document.write(my.reverse() ,"<br/>");
+ document.write(my,"<br/>");
+ // reverse -> 파괴적 함수
+ 
+ var point = [1,2,5,4,3];
+ document.write(point.sort(function(a,b){
+	 return a-b;
+ }));  // 오름차순
+ document.write("<br/>");
+ document.write(point.sort(function(a,b){
+	 return b-a;
+ }));  // 내림차순 
+ 
+ var data = new Array(2,3,4,5);
+ 
+ function getSum(total,num){
+	 return total + num;
+ }
+ 
+ document.write(getSum);
+ document.write(data.reduce(getSum)+"<br/>");
+ 
+ var numbers=[4,9,16,25];
+ document.write(numbers.map(Math.sqrt)+"<br/>"); //2,3,4,5
+ 
+ function puser(a){ return Math.pow(a,2);}
+ document.write(numbers.map(puser) , "<br/>"); // 16, 81, 256, 625
+ 
+ 
+ </script>
+</body>
+</html>

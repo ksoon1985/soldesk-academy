@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	/*
+		attribute(html) , property(javascript)
+	
+		property : attribute에 대한  html dom tree 안에서의 표현 .
+		
+		
+		attr(); => 지정되 있지 않다면 undefined , 요소에 속성이 지정된 것들만 가져옴 
+		prop(); => 지정되 있지 않다면 false , 요소에 속성이 지정되 있지 않아도 가져옴 
+		
+	*/
+	$(document).ready(function(){
+		$("button").click(function(){
+			/* alert($("a").attr("href")); */ // a의  href 속성 값을 return  
+			// ./script050_jquery
+			/* alert($("a").prop("href")); */ // a의  href 속성 값을 return 
+			// http://localhost:8090/jsTest/script050_jquery  (전체 경로)
+			
+			alert($("input").attr("checked")); // undefined 
+			alert($("input").prop("checked")); // false
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn">commit</button>
+	<a href="./script050_jquery">첫 페이지</a>
+	<input type="checkbox"/>
+	<div>test</div>
+</body>
+</html>

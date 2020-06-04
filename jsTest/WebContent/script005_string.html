@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	var data = 'It\'s alright'; // \' 
+	document.write(data + "<br/>");
+	
+	var str= "Apple, Banana, Kiwi";
+	document.write(str.slice(7,13)+"<br/>");  //banana
+	document.write(str.slice(-12,-6)+"<br/>");//banana
+	document.write(str.substring(7,13)+"<br/>");
+	document.write(str.substr(7,6)+"<br/>");
+	//document.write(str.replace(/Microsoft/gi, "W3Schools"));
+	
+	var text1 = "hello world";
+	document.write(text1.toUpperCase() + "<br/>");
+/*  	document.write(screen.colorDepth);
+	location.href = "script004_Global_eval.html"; */
+	var text2 = "hello ";
+	document.write(text2.concat("web"));
+	
+	var text3 = "fafddajkl";
+	for(var index in text3)
+		document.write(text3[index] +"<br/>");
+	/* 
+	document.write(navigator.appCodeName +"<br/>");
+	document.write(navigator.appName +"<br/>");
+	document.write(navigator.appVersion +"<br/>");
+	document.write(navigator.language +"<br/>");
+	document.write(navigator.product +"<br/>");
+	document.write(navigator.onLine +"<br/>");
+	 */
+	 var str = "The rain in SPAIN in stays mainly";
+	 document.write(str.match(/ain/gi) +"<br/>");
+	 document.write(str.search("ain") +"<br/>");
+	 
+</script>
+
+</body>
+</html>

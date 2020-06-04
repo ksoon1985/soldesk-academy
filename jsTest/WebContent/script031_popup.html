@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	document.getElementsByTagName("area")[0].onclick = function(){
+	var imgElement=document.getElementsByTagName("img")[0]; // area
+	imgElement.style.width="0px";
+	imgElement.style.height="0px";
+	imgElement.style.visibility="hidden";
+	
+	};
+};
+</script>
+</head>
+<body>
+<p>팝업창 띄우기 </p>
+<img src="images/popup.jpg" usemap="#pop"/>
+<map name="pop" id="pop">
+	<area alt="창닫기" shape="rect" coords="255,332,290,345" href="#" /> 
+</map>
+</body>
+</html>
