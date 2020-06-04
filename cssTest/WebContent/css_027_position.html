@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+	border-width:0;	
+}
+
+.box1{
+	width:500px;
+	height:100px;
+	background-color:black;
+}
+.box2{
+	width:500px;
+	height:200px;
+	background-color:yellow;
+	position:relative;
+}
+/* 
+	!!중요 
+	기본 position : static 
+	부모의 position 이 static 이면 body를 기준으로 좌표를 잡음 
+	
+	absolute는 이동을하게 되면 원래의 위치값을 잃어버려 다른 요소의 위치가 이동이 됨 
+	relative는 이동을 하게 되어도 원래의 위치값을 잃지않아 다른 요소의 위치가 이동이 안 됨
+*/
+.box3{
+	width:100px;
+	height:100px;
+	background-color:red;
+	position:absolute;
+	left:50px;
+	top:50px;
+}
+.box4{
+	width:100px;
+	height:100px;
+	background-color:green;
+	position : relative;
+	top :0 px;
+	left : 200px;
+	
+}
+.box5{
+	width:100px;
+	height:100px;
+	background-color:orange;
+	
+	position:fixed;
+	/* 원래 위치값을 잃어버림  , 화면에 그대로 고정 됨 */
+}
+.box6{
+	width:200px;
+	height:100px;
+	background-color:aqua;
+}
+
+
+/*
+	포지션(Position)
+	1. 포지션은 박스에 대한 배치를 변경할 때 사용된다.
+	2. 포지션은 값으로 static, absolute, relative, fixed가 있다.
+	3.  static   : 순서에 의한 기본 위치를 지정한다.
+		absolute : 부모 요소를 기준으로 위치를 지정한다.
+		(원래의 위치값을 잃는다.)
+		relative : 자기 자신을 기준으로 위치를 지정한다.
+		(원래의 위치값을 가지고 있다.)
+		fixed    : 스크린을 기준으로 위치를 지정한다. 
+		(원래의 위치값을 잃는다.)
+	4. absolute의 위치 지정
+	부모요소의 position이 static 기준점이 body가 된다.
+	부모요소의 position이 absolute, relative 이면 기준점이 부모요소이다.
+*/
+</style>
+
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2">
+		<div class="box3"></div>
+		<div class="box4"></div>
+		<p>요소들의 위치 변경</p>
+	</div>
+	<div class="box5"></div>
+	<div class="box6">tjfkdlasj fd asjfkldja s
+	lfk djsalkfj dlsakjf lkdsaj
+	lfkjdaslkfjlkasfjlkasfdasdsadsadsadasd
+	asdsadsadadadasdsadsa
+	asdad asd sads asa as das sa dsad asd asa </div>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

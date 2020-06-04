@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* p의 자손중에서 class가 unit인 녀석 */
+p .unit{
+	background-color:aqua;
+}
+
+/* 요소가 p인 애들중에서 class가 unit 인 녀석 -> <p class="">*/
+p.unit{
+	background-color:yellow;
+}
+
+/* the CSS rule below will affect every HTML element on the page:*/
+*{
+	text-align:center;
+	color:blue;
+}
+</style>
+
+
+</head>
+<body>
+	<p>
+		<span class = "unit">p요소의 자손요소인
+		span요소에 설정된 class속성</span>
+	</p>
+	
+	<p class="unit"> p요소에서의 class속성 
+	</p>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+	border-width:0;
+}
+
+ul#gnb{
+	width:816px;
+	height:38px;
+	list-style-type:none;
+	background-color:yellow;
+	/*      수직    수평 */
+	margin:20px auto;
+}
+
+
+ul#gnb li{
+	/* 블록 요소를 float 하면 컨텐츠 크기가 요소크기만큼 잡힘*/
+	float:left;
+}
+
+ul#gnb li a{
+	width:136px;
+	height:38px;
+	display:block;
+	background-repeat:no-repeat;
+	background-image:url('images/globalnavbg.gif');
+	font-size:0px;
+	text-indent:-2000px;
+}
+
+ul#gnb li.apple a{
+	background-position: 0px 0px;
+}
+
+ul#gnb li.store a{
+	background-position: -136px 0px;
+}
+
+ul#gnb li.max a{
+	background-position: -272px 0px;
+}
+
+ul#gnb li.ipod a{
+	background-position: -408px 0px;
+}
+
+ul#gnb li.download a{
+	background-position: -544px 0px;
+}
+
+ul#gnb li.support a{
+	background-position: -680px 0px;
+}
+
+
+/*							 hover 						*/
+
+ul#gnb li.apple a:hover{
+	background-position: 0px -38px;
+}
+
+ul#gnb li.store a:hover{
+	background-position: -136px -38px;
+}
+
+ul#gnb li.max a:hover{
+	background-position: -272px -38px;
+}
+
+ul#gnb li.ipod a:hover{
+	background-position: -408px -38px;
+}
+
+ul#gnb li.download a:hover{
+	background-position: -544px -38px;
+}
+
+ul#gnb li.support a:hover{
+	background-position: -680px -38px;
+}
+</style>
+</head>
+<body>
+	<ul id="gnb">
+		<li class="apple"><a href="#">Apple</a></li>
+		<li class="store"><a href="#">Store</a></li>
+		<li class="max"><a href="#">mac</a></li>
+		<li class="ipod"><a href="#">ipod</a></li>
+		<li class="download"><a href="#">Download</a></li>
+		<li class="support"><a href="#">support</a></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	/* display : 요소의 레벨을 변경해주는 속성이다. */
+	
+a{
+	background-color:yellow;
+	width:100px;
+	height:100px;
+	
+	/* a라는 inline 요소를 block 요소로 바꿔줌 */
+	display:block;
+	
+	border:1px solid black;
+	
+	text-align:center;
+	
+	/* vertical-align:middle; */
+	
+	line-height:100px;
+}
+div{
+	background-color:red;
+	width:100px;
+	height:100px;
+	border:1px solid black;
+	display:inline;
+	/* inline으로 적용하면 width, height 값 적용 x */
+}
+
+span{
+	background-color:olive;
+	width:100px;
+	height:100px;
+	
+	/* inline 성질은 유지하면서 block처럼 크기값은 바꾸고 싶을 때 */
+	display:inline-block;
+}
+
+table td{
+	width:100px;
+	height:100px;
+	text-align:center;
+	/* 수평 정렬  block 요소 일땐 적용 x , table cell요소 에서 적용 o */
+	vertical-align:top;
+}
+
+.sp{
+	border:2px solid;
+	text-align:center;
+	vertical-align:middle;
+	
+	/* vertical-align 을 적용시키기 위해  display를 table cell로 적용  */
+	/* 아님 line-height으로 노가다 하거나 */
+	display:table-cell;
+}
+
+h1{
+	/* 화면에서 사라짐과 동시에  자리까지 없어짐 */
+	display:none;
+}
+</style>
+
+</head>
+<body>
+	<!--inline 요소  -->
+	<a href="http://www.w3schools.com">W3SCHOOLS</a>
+	<a href="http://www.naver.com">NAVER</a>
+	<a href="http://www.daum.net">DAUM</a>
+	<div id="aa">display</div>
+	<span>웹문서</span>
+
+	<h1>테이블의 제목</h1>
+
+	<table border="1">
+		<tr>
+			<td>one</td>
+			<td>two</td>
+		</tr>
+	</table>
+	<span class="sp">text</span>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 자손  -> body 밑에 있는 모든 h1 */
+/* 우선순위 0002(0001 + 0001) */
+body h1{
+	color:red;
+}
+
+/* 우선순위 0001*/
+h1{
+	color:blue;
+}
+
+/* 각각 우선순위 0001 */
+h1 , h2{
+	color:gray;
+}
+
+/* 우선순위 0011(0001 + 0010) h1중에 class가 blue인 곳에 스타일을 적용*/
+/* class */
+h1.blue{
+	color:orange;
+}
+
+/* 우선순위 0100*/
+#d1{
+	color:yellow;
+}
+
+/* 우선순위 0110(0100 + 0010) id가 d1인 곳중에서 class가 ko인곳 */
+#d1.ko{
+	color:#ff19f0;
+}
+
+
+/* 우선순위 0111(0100+ 0010+ 0001) ~자손에서 p */
+#d1.ko p{
+	color:green;
+}
+
+/* !important 는 우선순위 계산이 무시대고 무조건 적용된다. */
+p{
+	color:aqua !important;
+}
+
+</style>
+
+</head>
+<body>
+
+	<h1 class="blue">title1</h1>
+	<div id="d1">
+		<div>
+			<h1 class="ko">title2</h1>
+		</div>
+	</div>
+	
+	<!-- class속성 값을 여러개 줄 때  -->
+	<p id="d1" class="ko multi">우선순위는 요소들에 적용할 스타일이 중복될 때 적용되는 스타일을 계산하는 방법이다.
+	</p>
+
+	<p style="color:red">요소들에 스타일을 적용하기 위해서는 선택자를 지정해서 설정할 수 있다.</p>
+</body>
+</html>

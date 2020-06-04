@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+p{
+	font-family:Consolas;
+	font-size:16px;
+}
+
+.t{
+	font-weight:bold;
+	color:#009688;
+}
+.a{
+	white-space:normal;
+}
+.b{
+	white-space:nowrap;
+}
+.c{
+	white-space:pre;
+	background-color:aqua;
+}
+.d{
+	white-space:pre-wrap;
+	background-color:yellow;
+}
+.e{
+	white-space:pre-line;
+	background-color:maroon;
+}
+</style>
+
+<!--
+***유용하게 사용됨. 
+white-space는 스페이스와 탭, 줄바꿈, 자동줄바꿈을 어떻게 처리할지 정하는 속성
+  
+		스페이스와 탭1	      줄바꿈2	       자동 줄바꿈3
+normal	      병합			 병합				O
+nowrap	      병합			 병합				X
+pre		      보존			 보존				X
+pre-wrap   보존			 보존	            O
+pre-line   병합	                 보존	    		O
+
+1. 연속된 스페이스와 탭의 처리 방법입니다. 병합은 1개의 공백으로 바꾸는 것이고, 보존은 입력된 그대로 출력하는 것입니다.
+2. 줄바꿈의 처리방법입니다. 병합은 1개의 공백으로 바꾸는 것이고, 보존은 입력된 그대로 출력하는 것입니다.
+3. 내용이 영역의 크기를 벗어날 때 처리방법입니다. O는 자동으로 줄바꿈하여 영역 내에 내용을 표시하는 것이고, X는 영역을 벗어나더라도 입력된 대로 출력하는 것입니다.
+
+
+-->
+</head>
+<body>
+	<p class="t">white-space: normal;</p>
+	<p class="a">Lorem ipsum dolor sit amet, consectetur adipiscing
+		elit. Nunc viverra lectus in nisl convallis, id mattis tortor
+		ultrices. Quisque a justo              non nisl maximus pretium quis sit amet
+		tortor.</p>
+	<p class="t">white-space: nowrap;</p>
+	<p class="b">Lorem ipsum dolor sit amet, consectetur adipiscing
+		elit. Nunc viverra lectus in nisl convallis, id mattis tortor
+		ultrices. Quisque a justo non nisl maximus pretium quis sit amet
+		tortor.</p>
+	<p class="t">white-space: pre;</p>
+	<p class="c">Lorem ipsum dolor sit amet, consectetur adipiscing
+		elit. Nunc viverra lectus in nisl convallis, id mattis tortor
+		ultrices. Quisque         a         justo non nisl maximus pretium quis sit amet
+		tortor.</p>
+	<p class="t">white-space: pre-wrap;</p>
+	<p class="d">Lorem ipsum dolor sit amet, consectetur adipiscing
+		elit. Nunc viverra lectus in nisl convallis, id mattis tortor
+		ultrices. Quisque a 		justo non           nisl maximus pretium quis sit amet
+		tortor.</p>
+	<p class="t">white-space: pre-line;</p>
+	<p class="e">Lorem ipsum dolor sit amet,	 consectetur      adipiscing
+		elit. Nunc viverra lectus in nisl convallis, 
+		
+		id mattis tortor
+		ultrices. Quisque a justo non nisl 
+		
+		maximus pretium quis sit amet
+		tortor.</p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+ul{
+	background-color:yellow;
+	height:100px;
+	width:100px;
+}
+
+ul,li{
+	border:1px solid;
+}
+
+ul li{
+	
+	/* 기호를 이미지로 표현할 때 사용되는 스타일이다. */
+	list-style-image:url('./images/icon.png');
+	
+	/* 기호가 li 안,밖 으로 포지셔닝 */
+	list-style-position:inside;
+	
+	list-style-type:square;
+	
+	/*					↓	단축속성 				*/
+	
+	/* 	     	type   position     image */
+	list-style:square inside url('./images/icon.png');
+}
+</style>
+
+</head>
+<body>
+	<ul>
+		<li>메뉴1</li>
+		<li>메뉴2</li>
+		<li>메뉴3</li>
+	</ul>
+</body>
+</html>
