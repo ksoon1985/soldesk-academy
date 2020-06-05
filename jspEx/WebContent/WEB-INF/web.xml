@@ -40,7 +40,38 @@
    <servlet-name>boardServlet</servlet-name>
    <url-pattern>*.do</url-pattern>
 </servlet-mapping>
+<!-- 
+<error-page>
+	<error-code>404</error-code>
+	<location>/error/error404.jsp</location>
+</error-page>
 
+<error-page>
+	<error-code>500</error-code>
+	<location>/error/error500.jsp</location>
+</error-page>
 
+ -->
+ 
+<!--  
+ <error-page>
+	<exception-type>java.lang.Exception</exception-type>
+	<location>/error/errorType.jsp</location>
+</error-page>
+ -->
+ 
+  <filter>
+        <filter-name>Encoding Filter</filter-name>
+        <filter-class> com.dbutil.CommonEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>Encoding Filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>
 

@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%@ page import ="logon.*" %>
-
-<%
-	request.setCharacterEncoding("utf-8");
-%>
+<%@ page import="logon.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,31 +9,27 @@
 </head>
 <body>
 
+<jsp:useBean id="dto" class="logon.LogonDTO"/>
+<jsp:setProperty property="*" name="dto"/>
+
 <!-- id 와 passwd 받기 -->
-<%
-	String id = request.getParameter("id");
-	String passwd = request.getParameter("passwd");
-%>
 
 <!-- DAO 호출 실행하고 결과 가지고 ALERT 띄움  -->
 <%
 	LogonDAO dao = LogonDAO.getInstance();
-
-	int c = dao.userCheck(id, passwd);
+	
+	int c = dao.userCheck(dto.getId(),dto.getPasswd());
 	
 	out.println(c);
 	
 	if(c==1){
-		Cookie ck = new Cookie("memId",id);
-		ck.setMaxAge(10*60); // 10분
-		response.addCookie(ck); // 쿠키 저장 
 		
-		response.sendRedirect("okLogonConfirm.jsp");
+		session.setAttribute("memId",dto.getId());
+		response.sendRedirect("sessionLogonConfirm.jsp");
 	}
 	else{
 		out.println("아이디가 없거나 비밀번호가 틀립니다. ");
 	}
-	
 	
 %>
 
