@@ -73,13 +73,15 @@ function pwCheck(){
 						<input type="button" value="글수정" name="update" onclick="javascript:pwCheck('u')"/>
 						<input type="button" value="글삭제" name="delete" onclick="javascript:pwCheck('d')"/>
 						<input type="button" value="답글" id="reply" />
-						<input type="button" value="글목록으로 ..." id="list1" onclick="javascript:location.href='list.do'"/>
+						<input type="button" value="글목록으로 ..." id="list1"/>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 		
 		<form action="" name="parentForm" method="post">
+			<input type="hidden" name="currentPage" value='<c:out value="${pdto.currentPage}"/>'/>
+			<input type="hidden" name="currPageBlock" value='<c:out value="${pdto.currPageBlock}"/>'/>
 			<input type="text"   name="passwd" 		value="${dto.passwd}" />
 			<input type="text"   name="num" 		value="${dto.num}" />
 			<input type="text"   name="cpass" 		value="" />

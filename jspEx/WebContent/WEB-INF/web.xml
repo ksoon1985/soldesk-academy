@@ -62,7 +62,7 @@
  
   <filter>
         <filter-name>Encoding Filter</filter-name>
-        <filter-class> com.dbutil.CommonEncodingFilter</filter-class>
+        <filter-class>com.dbutil.CommonEncodingFilter</filter-class>
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>

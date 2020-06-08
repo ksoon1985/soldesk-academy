@@ -5,14 +5,34 @@ import javax.servlet.http.HttpServletResponse;
 
 import board.BoardDAO;
 import board.BoardDTO;
+import board.PageDTO;
 
 public class WriteProAction implements CommandAction {
 
    @Override
    public String requestPro(HttpServletRequest req, HttpServletResponse res) throws Throwable {
       // 한글 확입얼을 위해 utf-8로 전환
-      req.setCharacterEncoding("UTF-8");
+      // req.setCharacterEncoding("UTF-8");
       
+	  // 현재 페이지
+	  int currentPage = 0;
+	  if(req.getParameter("currentPage") == null)
+		  currentPage = 1;
+	  else
+		  currentPage = Integer.parseInt(req.getParameter("currentPage"));
+				
+	  // 현재 페이지 블럭 
+	  int currPageBlock = 0;
+	  if(req.getParameter("currPageBlock") == null)
+		  currPageBlock = 1;
+	  else
+	  currPageBlock = Integer.parseInt(req.getParameter("currPageBlock"));
+				
+				
+	  PageDTO pdto = new PageDTO();
+	  pdto.setCurrentPage(currentPage);
+	  pdto.setCurrPageBlock(currPageBlock);
+	  
       // writeForm에서 보내준 데이터 모두 받기
       BoardDTO dto = new BoardDTO();
       
@@ -35,6 +55,7 @@ public class WriteProAction implements CommandAction {
          //DAO에 대한 인스턴스 받아오기
       BoardDAO dao = BoardDAO.getInstance();
       int r = dao.boardWrite(dto);
+      req.setAttribute("pdto", pdto);
       
       return "/board2/writePro.jsp";
    }

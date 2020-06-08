@@ -23,6 +23,6 @@
 			else out.println("저장 못함 !!!"); 
 		*/
 	%>
-	<c:redirect url="list.do"></c:redirect>
+	<c:redirect url="list.do?currentPage=${pdto.currentPage}&currPageBlock=${pdto.currPageBlock}"></c:redirect>
 </body>
 </html>

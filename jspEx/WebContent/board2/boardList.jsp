@@ -45,6 +45,12 @@
 			<table border="1" class="posts-exist">
 				<thead>
 					<tr>
+						<th colspan="5">
+							<h2 style="text-align:right">
+								전체 글 개수 : &nbsp;<c:out value="${pdto.allCount}"/>&nbsp;						</h2>
+						</th>
+					</tr>
+					<tr>
 						<th>글번호</th>
 						<th>글제목</th>
 						<th>작성자</th>
@@ -98,11 +104,29 @@
 					</tr>
 				</tbody>
 			</table>
+	 		<h5 style="text-align: center">
+	    		<c:if test="${pdto.startPage > pdto.pageBlock}">
+	        		<a href="/jspEx/list.do?currentPage=${pdto.startPage-pdto.pageBlock}&currPageBlock=${pdto.currPageBlock-1}"
+	          		style=" text-decoration: none;"> [이전]</a>
+	   		    </c:if>
+	   			<c:forEach var="i" begin="${pdto.startPage}" end="${pdto.endPage}">
+	      			<a href="/jspEx/list.do?currentPage=${i}&currPageBlock=${pdto.currPageBlock}" style=" text-decoration: none;">
+	            		<c:out value="[${i}]"/>&nbsp;
+	            	</a>
+	    		</c:forEach>
+	    		<c:if test="${pdto.endPage < pdto.allPage}">
+	        		<a href="/jspEx/list.do?currentPage=${pdto.endPage+1}&currPageBlock=${pdto.currPageBlock+1}"
+	          			style=" text-decoration: none;"> [다음]
+	          		</a>
+	    		</c:if>
+	  		</h5>
 		</c:when>
 	</c:choose>
 	
 	<form action="content.do" name="content" method="post">
-		<input type="text" name="num"  value='<c:out value="${dto.num}" /> ' />
+		<input type="text" name="num"  value='' />
+		<input type="hidden" name="currentPage" value='<c:out value="${pdto.currentPage}"/>'/>
+		<input type="hidden" name="currPageBlock" value='<c:out value="${pdto.currPageBlock}"/>'/>
 	</form>
 
 </body>

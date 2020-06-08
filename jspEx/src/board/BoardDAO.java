@@ -108,7 +108,7 @@ public class BoardDAO {
 				sql+= " 	from (select num,writer,subject,email,content,passwd,reg_date,readcnt,ref,re_step,re_level,attachnm";
 		        sql+= " 			from board ";
 		        sql+= "				order by ref asc, re_step asc ) rboard ) a ";
-		        sql+= " where a.rr between 1 and 20 ";
+		        sql+= " where a.rr between ? and ? ";
 
 		
 		Connection conn = DBConnection.getConnection();
@@ -119,6 +119,10 @@ public class BoardDAO {
 		ResultSet rs = null;
 		
 		pstmt = conn.prepareStatement(sql);
+		
+		pstmt.setInt(1, sRow);
+		pstmt.setInt(2, pageSize);
+		
 		rs = pstmt.executeQuery();
 		
 		while(rs.next())
@@ -269,5 +273,39 @@ public class BoardDAO {
 		}
 		
 		return r;
+	}
+	
+	public int getAllCount()
+	{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int allCnt = 0;
+		
+		String sql = "select count(num) cnt from board ";
+		
+		try {
+		 conn = DBConnection.getConnection();
+		 pstmt = conn.prepareStatement(sql);
+		 rs = pstmt.executeQuery();
+		 
+		 if(rs.next())
+		 {
+			 allCnt = rs.getInt("cnt");
+		 }
+			
+		 if(rs != null) {rs.close();}
+		 if(pstmt != null) {pstmt.close();}
+		 if(conn != null) {conn.close();}
+			
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return allCnt;
 	}
 }
