@@ -78,12 +78,16 @@ public class ControllerAction extends HttpServlet {
          String command = (String) key.next(); // 		/list.do , /writeForm.do ...
          String className = pr.getProperty(command); //  model2.board.action.ListAction
          try {
-        	 
+        	
+        	// ListAction 등 클래스 파일들을 로딩하는 단계 , 단 메모리에 올라가진 않음 
             Class commandClass = Class.forName(className);
             
+            // 위의 클래스 파일들을 newInstance 해줘야 메모리에 올라감 
             Object commandInstance = commandClass.newInstance();
             
-            //해당 키와 인스턴스를 저장해서 Web상에서 불러서 사용할
+            // 해당 키와 인스턴스를 저장해서 Web상에서 불러서 사용할
+            // 즉 , /list.do , model2.board.action.ListAction 를 메모리에 올린 인스턴스 
+            // 를 HashMap 에 저장시켜줌.
             commandMap.put(command, commandInstance);
             
          } catch (ClassNotFoundException e) {
@@ -128,30 +132,36 @@ public class ControllerAction extends HttpServlet {
       //ListAction 등 모든 클래스를 실행 다형성을 이용해서
       
       String view = null;
-      CommandAction com=null; //다형성을 하기위해
+      CommandAction com = null; //다형성을 하기위해
       
       try {
     	  
           String command = request.getRequestURI();
-//          System.out.println(command);
-//          System.out.println(request.getContextPath());
+          System.out.println(command); // /jspEx/list.do
+          System.out.println(request.getContextPath()); // /jspEx
           
           if(command.indexOf(request.getContextPath())==0) {
+        	 System.out.println(request.getContextPath()); // /jspEx
              command = command.substring(request.getContextPath().length());
-             System.out.println(command);
+             System.out.println(command); // /list.do
           }
 
-          com = (CommandAction)commandMap.get(command);
+          // /list.do 에 저장된 인스턴스(model2.board.action.ListAction)를 com 에 저장 
+          com = (CommandAction)commandMap.get(command); 
           
           // forword view로
           // Action 들의 requestPro 호출 
-          view = com.requestPro(request, response);
+          view = com.requestPro(request, response); // view : /board2/boardList.jsp
+          // ListAction 에서 request 속성등을 추가시켜줌 
           
       } catch (Throwable e) {
          e.printStackTrace();
       }
       
-      	 
+      	  // dispatch 보내다 
+      	  // request 객체에 속성을 설정한 후 RequestDispatcher  를 통해
+      	  // 요청을 넘길 컴포넌트를 설정 
+      	  // 그 후 forward 메소도르를 이용하여 request , response 를 변수로 넘김 
           RequestDispatcher dispatcher = request.getRequestDispatcher(view);          
           dispatcher.forward(request, response);
           
