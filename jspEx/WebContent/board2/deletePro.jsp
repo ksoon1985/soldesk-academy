@@ -9,7 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<c:redirect url="list.do"></c:redirect>
+	<c:redirect url="list.do?currentPage=${pdto.currentPage}&currPageBlock=${pdto.currPageBlock}"></c:redirect>
 </body>
 </html>

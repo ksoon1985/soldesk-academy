@@ -3,6 +3,9 @@ package model2.board.action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 import board.BoardDAO;
 import board.BoardDTO;
 import board.PageDTO;
@@ -14,6 +17,10 @@ public class WriteProAction implements CommandAction {
       // 한글 확입얼을 위해 utf-8로 전환
       // req.setCharacterEncoding("UTF-8");
       
+	  MultipartRequest multi = new MultipartRequest(req,"C:/study/upload",
+				5*1024*1024,"utf-8" // 5mb
+				,new DefaultFileRenamePolicy());
+	   
 	  // 현재 페이지
 	  int currentPage = 0;
 	  if(req.getParameter("currentPage") == null)
@@ -47,9 +54,18 @@ public class WriteProAction implements CommandAction {
       dto.setContent(req.getParameter("content"));
       dto.setEmail(req.getParameter("email"));
       dto.setPasswd(req.getParameter("passwd"));
-      dto.setAttachNm(req.getParameter("attachNm"));
+
       
-      
+      if(req.getParameter("attachNm")!=null)
+      {
+    	  dto.setAttachNm(req.getParameter("attachNm"));
+    	  String at = req.getParameter("attachNm");
+    	  System.out.println(at);
+      }
+      else
+      {
+    	  dto.setAttachNm("");
+      }
       
       //DAO를 통해서 받은 데이터 저장하기
          //DAO에 대한 인스턴스 받아오기

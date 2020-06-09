@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <form action="updatePro.do" method="post" name="writeForm" onsubmit="return sendData()">
+    <form action="updatePro.do" method="post" name="updateForm" onsubmit="return sendData()">
       <table border=1>
          <thead>
             <tr>
@@ -63,13 +63,16 @@
                <td>
                		<input type="password" placeholder="비밀번호를 입력하세요" name="passwd" value='<c:out value="${dto.passwd}"/>'/>                                
                		<input type="hidden" name="num" value='<c:out value="${dto.num}"/>'/>
+               		
+               		<input type="hidden" name="currentPage" value='<c:out value="${pdto.currentPage}"/>'/>
+					<input type="hidden" name="currPageBlock" value='<c:out value="${pdto.currPageBlock}"/>'/>
                </td>
                       
             <tr>
             <tr>
                <td colspan="2" align="center">
                   <input type="submit" value="등록" />
-                  <input type="button" value="글 목록으로...." id="List1"/> 
+                  <input type="button" value="글 목록으로...." id="List3"/> 
                      <!-- onclick="javascript:location.href='boardList.jsp'"> -->
                </td>
             </tr>
@@ -77,27 +80,6 @@
          </tbody>
       </table>
    </form>
-   
-<%-- /* 
-   
-     String cpass = request.getParameter("cpass");
-      String passwd = request.getParameter("passwd");
-      String num = request.getParameter("num");
-      System.out.println(passwd);
-      System.out.println(num);
-
-      if (cpass != null) {
-         System.out.println("2" + cpass);
-         System.out.println("2" + passwd);
-         System.out.println("2" + num);
-      } else {
-         System.out.println("1" + passwd);
-         System.out.println("1" + num);
-         request.setAttribute("passwd", passwd);
-         request.setAttribute("num", num);
-      }   
-      
-%>  --%>
       
 
 </body>

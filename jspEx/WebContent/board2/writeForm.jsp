@@ -20,13 +20,13 @@
 <body>
 	<!-- form 은 name으로 타고들어감  -->
 	
-	<form action="writePro.do" method="post" name="writeForm" onsubmit="return sendData()">
-		<input type="hidden" 	name="currentPage" value='<c:out value="${pdto.currentPage}"/>'/>
+	<form action="writePro.do" method="post" name="writeForm" onsubmit="return sendData()" enctype="multipart/form-data" >
+		<input type="hidden" 	name="currentPage"   value='<c:out value="${pdto.currentPage}"/>'/>
 		<input type="hidden" 	name="currPageBlock" value='<c:out value="${pdto.currPageBlock}"/>'/>
-		<input type="text"    	name="num" 			value="${num}" />
-		<input type="text" 		name="ref" 			value="${ref}" />
-		<input type="hidden" 	name="re_step" 		value="${re_step}" />
-		<input type="hidden" 	name="re_level" 	value="${re_level}" />
+		<input type="text"    	name="num" 			 value="${num}" />
+		<input type="text" 		name="ref" 			 value="${ref}" />
+		<input type="hidden" 	name="re_step" 		 value="${re_step}" />
+		<input type="hidden" 	name="re_level" 	 value="${re_level}" />
 		<table>
 			<thead>
 				<tr>
@@ -83,7 +83,7 @@
 				<tr>
 					<td colspan="2" align="center">
 						<input type="submit" value="등록" />
-						<input type="button" value="글 목록으로..." id="list1" />
+						<input type="button" value="글 목록으로..." id="list2" />
 					 </td>
 				</tr>
 			</tbody>
