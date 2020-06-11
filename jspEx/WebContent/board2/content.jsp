@@ -63,6 +63,12 @@ function pwCheck(){
 					</td>
 				</tr>
 				<tr>
+					<th>첨부파일:</th>
+					<td>
+						<c:out value="${dto.attachNm }" />
+					</td>
+				</tr>
+				<tr>
 					<th>조회수 : </th>
 					<td>
 						<c:out value="${dto.readcnt}" /> 

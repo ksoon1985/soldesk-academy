@@ -82,8 +82,8 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="center">
-						<input type="submit" value="등록" />
-						<input type="button" value="글 목록으로..." id="list2" />
+						<input type="submit" name="submit" value="등록" />
+						<input type="button" name="listbtn" value="글 목록으로..." id="list2" />
 					 </td>
 				</tr>
 			</tbody>

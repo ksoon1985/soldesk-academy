@@ -1,5 +1,7 @@
 package model2.board.action;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,6 +11,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import board.BoardDAO;
 import board.BoardDTO;
 import board.PageDTO;
+import common.ServletUpload;
 
 public class WriteProAction implements CommandAction {
 
@@ -16,7 +19,8 @@ public class WriteProAction implements CommandAction {
    public String requestPro(HttpServletRequest req, HttpServletResponse res) throws Throwable {
       // 한글 확입얼을 위해 utf-8로 전환
       // req.setCharacterEncoding("UTF-8");
-      
+      /*
+       
 	  MultipartRequest multi = new MultipartRequest(req,"C:/study/upload",
 				5*1024*1024,"utf-8" // 5mb
 				,new DefaultFileRenamePolicy());
@@ -72,6 +76,16 @@ public class WriteProAction implements CommandAction {
       BoardDAO dao = BoardDAO.getInstance();
       int r = dao.boardWrite(dto);
       req.setAttribute("pdto", pdto);
+      
+      */
+      
+      Map<String,Object> mutlDTO = ServletUpload.uploadEx(req, res);
+      // dao를 통해 받은 데이터 저장
+      // dao에 대한 인스턴스 받기
+      
+      BoardDAO dao = BoardDAO.getInstance();
+      dao.boardWrite((BoardDTO)mutlDTO.get("dto"));
+      req.setAttribute("pdto", (PageDTO)mutlDTO.get("pdto"));
       
       return "/board2/writePro.jsp";
    }

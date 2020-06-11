@@ -37,9 +37,11 @@ public class ListAction implements CommandAction{
 	        int currentPage =0;
 	        
 	        // 처음 list.do 를 실행할 경우 
-	        if(req.getParameter("currentPage")==null){
+	        if(req.getParameter("currentPage")==null || req.getParameter("currentPage").equals("0"))
+	        {
 	           currentPage = 1;
-	        }else {
+	        }else 
+	        {
 	           currentPage=Integer.parseInt(req.getParameter("currentPage"));
 	        }
 	        
@@ -47,7 +49,8 @@ public class ListAction implements CommandAction{
 	        int currPageBlock=0;
 	        
 	        // 처음 list.do 를 실행 했을 때 
-	        if(req.getParameter("currPageBlock")==null){
+	        if(req.getParameter("currPageBlock")==null || req.getParameter("currentPage").equals("0"))
+	        {
 	           currPageBlock = 1;
 	        }else {
 	           currPageBlock = Integer.parseInt(req.getParameter("currPageBlock"));
