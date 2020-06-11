@@ -68,10 +68,11 @@ public class Jmemo extends JFrame implements ClipboardOwner,ActionListener,Print
 			System.exit(0);
 		}
 	});
+	
+	ta.getDocument().addUndoableEditListener(this); // managing UndoableEdit listeners.
 
-	ta.getDocument().addUndoableEditListener(this); // textarea
-	contentPane = getContentPane();
-	scrollPane = new JScrollPane(ta);
+	contentPane = getContentPane(); 
+	scrollPane = new JScrollPane(ta); // textarea 를 scrollpane에 부착
 	// scrollPane.add(ta);
 	viewPort = scrollPane.getViewport();
 	viewPort.add(ta);
@@ -92,15 +93,17 @@ public class Jmemo extends JFrame implements ClipboardOwner,ActionListener,Print
 	mi16 = new JMenuItem("인쇄");
 	mi17 = new JMenuItem("끝내기");
 
-	mi11.addActionListener(this);// 액션리스너 등록
+	// 액션리스너 등록
+	mi11.addActionListener(this);
 	mi12.addActionListener(this);
 	mi13.addActionListener(this);
 	mi14.addActionListener(this);
 	mi15.addActionListener(this);
 	mi16.addActionListener(this);
 	mi17.addActionListener(this);
-
-	mi11.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
+	
+	//단축키 실정
+	mi11.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));//ctrl+n
 	mi12.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
 	mi13.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
 	mi14.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.ALT_MASK));
@@ -123,11 +126,11 @@ public class Jmemo extends JFrame implements ClipboardOwner,ActionListener,Print
 	m2 = new JMenu("편집");
 
 	mi21 = new JMenuItem("실행취소");
-	mi22 = new JMenuItem(new DefaultEditorKit.CutAction());
+	mi22 = new JMenuItem(new DefaultEditorKit.CutAction()); // 잘라내기
 	mi22.setText("잘라내기");
-	mi23 = new JMenuItem(new DefaultEditorKit.CopyAction());
+	mi23 = new JMenuItem(new DefaultEditorKit.CopyAction()); // 복사
 	mi23.setText("복사");
-	mi24 = new JMenuItem(new DefaultEditorKit.PasteAction());
+	mi24 = new JMenuItem(new DefaultEditorKit.PasteAction()); // 붙여넣기 
 	mi24.setText("붙여넣기");
 	mi25 = new JMenuItem("삭제");
 	mi26 = new JMenuItem("찾기");
