@@ -1,5 +1,6 @@
 package memo;
 
+//메모장 
 import java.io.*;
 import java.beans.*;
 import java.awt.*;
