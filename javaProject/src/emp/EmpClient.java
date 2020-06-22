@@ -32,7 +32,7 @@ public class EmpClient extends Thread{
 			
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		} catch(Exception e) {
 			System.err.println(e);
 		} finally {

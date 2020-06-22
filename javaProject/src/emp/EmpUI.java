@@ -225,7 +225,7 @@ public class EmpUI implements ActionListener {
 			lblStatus.setText("검색 성공");
 			showList();
 			txtEmpNo.setText(Integer.toString(e.getEmpNo()));
-			txtName.setText(e.getPosition());
+			txtName.setText(e.getName());
 			txtPosition.setText(e.getPosition());
 			txtDept.setText(e.getDept());
 		}catch(NumberFormatException e) {
