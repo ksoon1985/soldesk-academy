@@ -1,8 +1,10 @@
-package emp;
+package emp.mes.server;
 
 import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+
+import emp.dto.EmpDTO;
 
 public class EmpServer {
 	private int port = 9000;
@@ -30,7 +32,7 @@ public class EmpServer {
 				ois = new ObjectInputStream(s.getInputStream());
 				
 				while(true) {
-					Employee e = (Employee) ois.readObject();
+					EmpDTO e = (EmpDTO) ois.readObject();
 					if(e == null) break;
 					System.out.println(e);
 				}

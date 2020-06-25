@@ -1,4 +1,4 @@
-package emp;
+package emp.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -18,6 +18,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+
+import emp.dto.EmpDTO;
+import emp.exception.DuplicateException;
+import emp.exception.RecordNotFoundException;
+import emp.mes.client.EmpClient;
+import emp.mgr.impl.EmpMgrImpl;
 
 public class EmpUI implements ActionListener {
 
@@ -137,7 +143,7 @@ public class EmpUI implements ActionListener {
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent ee){
 				if(list.getSelectedValue() == null) return;
-				Employee e = (Employee)list.getSelectedValue();
+				EmpDTO e = (EmpDTO)list.getSelectedValue();
 				txtEmpNo.setText(e.getEmpNo()+"");
 				txtName.setText(e.getName());
 				txtPosition.setText(e.getPosition());
@@ -172,7 +178,7 @@ public class EmpUI implements ActionListener {
 		}
 		
 		try {
-			mgr.add(new Employee(Integer.parseInt(empNo),name,position,dept));
+			mgr.add(new EmpDTO(Integer.parseInt(empNo),name,position,dept));
 			lblStatus.setText("등록 성공");
 			showList();
 			clearField();
@@ -197,7 +203,7 @@ public class EmpUI implements ActionListener {
 		}
 		
 		try {
-			Employee empl = new Employee(Integer.parseInt(empNo),name,position,dept);
+			EmpDTO empl = new EmpDTO(Integer.parseInt(empNo),name,position,dept);
 			mgr.update(empl);
 			lblStatus.setText("등록 성공");
 			showList();
@@ -220,7 +226,7 @@ public class EmpUI implements ActionListener {
 		}
 		
 		try {
-			Employee e = mgr.search(Integer.parseInt(empNo));
+			EmpDTO e = mgr.search(Integer.parseInt(empNo));
 			mgr.search(e.getEmpNo());
 			lblStatus.setText("검색 성공");
 			showList();
@@ -269,7 +275,7 @@ public class EmpUI implements ActionListener {
 	}
 	
 	private void showList() {
-		List<Employee> ee = mgr.search();
+		List<EmpDTO> ee = mgr.search();
 		list.removeAll();
 		list.setListData(ee.toArray());
 	}

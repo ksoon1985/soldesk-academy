@@ -1,4 +1,4 @@
-package emp;
+package emp.mes.client;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -6,12 +6,14 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.List;
 
+import emp.dto.EmpDTO;
+
 public class EmpClient extends Thread{
-	private List<Employee> emps;
+	private List<EmpDTO> emps;
 	private String ip = "localhost";
 	private int port = 9000;
 	
-	public EmpClient(List<Employee> emps) {
+	public EmpClient(List<EmpDTO> emps) {
 		this.emps = emps;
 	}
 	
@@ -25,7 +27,7 @@ public class EmpClient extends Thread{
 			
 			oos = new ObjectOutputStream(s.getOutputStream()); // 클라 소켓으로 부터 스트림연결 
 			
-			for(Employee e : emps) {
+			for(EmpDTO e : emps) {
 				oos.writeObject(e);
 				oos.flush();
 			}

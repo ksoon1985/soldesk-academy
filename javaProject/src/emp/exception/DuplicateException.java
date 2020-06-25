@@ -1,4 +1,4 @@
-package emp;
+package emp.exception;
 
 public class DuplicateException extends Exception{
 	@Override

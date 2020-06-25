@@ -1,4 +1,4 @@
-package emp;
+package emp.mgr.impl;
 
 import java.io.EOFException;
 import java.io.File;
@@ -11,13 +11,18 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import emp.dto.EmpDTO;
+import emp.exception.DuplicateException;
+import emp.exception.RecordNotFoundException;
+import emp.mgr.IEmpMgr;
+
 public class EmpMgrImpl implements IEmpMgr {
 
-	private List<Employee> emps;
+	private List<EmpDTO> emps;
 	private static EmpMgrImpl instance; // singleton 디자인 패턴 
 	
 	private EmpMgrImpl() {
-		emps = new ArrayList<Employee>();
+		emps = new ArrayList<EmpDTO>();
 		load("emp.dat");
 	}
 	
@@ -51,7 +56,7 @@ public class EmpMgrImpl implements IEmpMgr {
 			while(true)
 			{
 				ob = ois.readObject();
-				emps.add((Employee)ob);
+				emps.add((EmpDTO)ob);
 			}
 		} catch (EOFException e) {
 			System.out.println("읽기 완료.");
@@ -83,7 +88,7 @@ public class EmpMgrImpl implements IEmpMgr {
 		try {
 			oos = new ObjectOutputStream(new FileOutputStream(file));
 			
-			for(Employee e : emps)
+			for(EmpDTO e : emps)
 			{
 				oos.writeObject(e);
 				oos.flush(); // 버퍼의 내용을 강제로 출력하여 비움 
@@ -103,10 +108,10 @@ public class EmpMgrImpl implements IEmpMgr {
 	}//save
 
 	@Override
-	public void add(Employee b) throws DuplicateException {
+	public void add(EmpDTO b) throws DuplicateException {
 		// TODO Auto-generated method stub
 		
-		for(Employee e : emps)
+		for(EmpDTO e : emps)
 		{
 			if(e.getEmpNo() == b.getEmpNo())
 			{
@@ -118,10 +123,10 @@ public class EmpMgrImpl implements IEmpMgr {
 	}
 
 	@Override
-	public Employee search(int num) throws RecordNotFoundException {
+	public EmpDTO search(int num) throws RecordNotFoundException {
 		// TODO Auto-generated method stub
 
-		for(Employee e : emps)
+		for(EmpDTO e : emps)
 		{
 			if(e.getEmpNo() == num)
 			{
@@ -135,12 +140,12 @@ public class EmpMgrImpl implements IEmpMgr {
 	}
 
 	@Override
-	public void update(Employee b) throws RecordNotFoundException {
+	public void update(EmpDTO b) throws RecordNotFoundException {
 		// TODO Auto-generated method stub
 		
 		boolean chk = true;
 		
-		for(Employee e : emps)
+		for(EmpDTO e : emps)
 		{
 			if(e.getEmpNo() == b.getEmpNo()) {
 				e.setName(b.getName());
@@ -160,12 +165,12 @@ public class EmpMgrImpl implements IEmpMgr {
 	public void delete(int num) throws RecordNotFoundException {
 		// TODO Auto-generated method stub
 		
-		Employee e = search(num);
+		EmpDTO e = search(num);
 		emps.remove(e);
 	}
 
 	@Override
-	public List<Employee> search() {
+	public List<EmpDTO> search() {
 		// TODO Auto-generated method stub
 
 		return emps;
