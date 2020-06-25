@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.NamingException;
 
@@ -15,7 +17,7 @@ public class EmpDAO {
 	private static EmpDAO instance = new EmpDAO();
 	public static EmpDAO getInstance() {return instance;}
 	
-	
+	// 사원 추가 
 	public int empEnrol(EmpDTO dto) throws NamingException , SQLException
 	{
 		Connection conn = EmpConnection.getConnection();
@@ -62,16 +64,18 @@ public class EmpDAO {
 		return cnt;
 	}
 	
-	public void empUpdate(EmpDTO dto)
+	// 사원 수정
+	public int empUpdate(EmpDTO dto)
 	{
 		int r = 0;
 		String sql="";
 		
 		PreparedStatement pstmt = null;
+		Connection conn = null;
 		
 		try {
 			
-			Connection conn = EmpConnection.getConnection();
+			conn = EmpConnection.getConnection();
 			
 			sql = "update emp set ";
 			sql+= " deptno = ? ";
@@ -94,14 +98,73 @@ public class EmpDAO {
 		
 			r = pstmt.executeUpdate();
 			
-			if()
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		
+		return r;
 	}
 	
-	public void empDelete()
+	// 사원 삭제 
+	public int empDelete(EmpDTO dto)
 	{
+		int r = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "";
+		try {
+				sql = "delete from emp ";
+				sql+= " where empno = ? ";
+				   
+			conn = EmpConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, dto.getEmpno());
+			
+			r = pstmt.executeUpdate();
+				
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		
+		return r;
 	}
 	
+	// 사원 전체 출력
+	public List<EmpDTO> getEmps()
+	{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		List<EmpDTO> emps = new ArrayList<EmpDTO>();
+		
+		String sql = "";
+		try {
+			sql = "select * from emp";
+			conn = EmpConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next())
+			{
+				EmpDTO dto = new EmpDTO();
+				
+			}
+			
+		}
+	}
 }
