@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.wrap{
+	background-color:gray;
+}
+
+div.wrap div{
+	width:100px;
+	height:100px;
+}
+
+.box1{
+	background-color:red;
+	
+	/* float 가 들어간 요소는 붕 뜸 */
+	float:right;
+}
+
+.box2{
+	background-color:blue;
+	float:left;
+}
+.box3{
+	background-color:green;
+	float:left;
+}
+
+div.wrap p{
+	clear:both;
+}
+
+div.other{
+	background-color:yellow;
+}
+
+div img.l{
+	float:left;
+	margin-left:20px;
+}
+
+div img.r{
+	float:right;
+}
+
+/* 
+	float 부모 요소안에 외쪽, 오른쪽 이동시키는 기능*
+	문서의 일반적인 흐름에 영향 x
+/
+</style>
+
+
+</head>
+
+<!-- 기본적으로 body 요소에게 상속을 받는데 width값만 받음  -->
+<body>
+	<div class="wrap">
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		<p>파워링크‘종각역맛집’ 관련 광고입니다. 이 광고가 표시된 이유등록 안내 경복궁맛집 정통인도음식점 옴
+			www.omfood.kr 광화문, 마포/공덕, 수원광교 옴레스토랑에서 인도 정통의 맛과 분위기를 느껴보세요 미리보기 돋보기
+			링크이미지 엘키친 이탈리안 비스트로 map.naver.com/local/siteview.nhn?code=35... 파스타,
+			피자, 스테이크, 세트메뉴, 데이트, 테이블룸, 무료주차2시간 12,000원부터 파스타&리조또 메뉴 16,500원부터
+			피자메뉴 19,000원부터 한우&폭 스테이크 종각역 돈존 참나무장작구이 donzon.modoo.at 종각역 맛집, 모임장소,
+			오리 참나무장작구이 바베큐 및 통삼겹바베큐, 오리떡갈비. 링크이미지 종각역맛집 88선수촌 종각점
+			store.naver.com/restaurants/detail?id=... 김종국이 인정한 냉동 삼겹살과 두툼한 돼지껍데기
+			맛집</p>
+		<span>inline</span>
+	</div>
+	
+	<div class="other">
+		<img class="l" src="./images/gosu.jpg" width="200" height="300" alt="영화배우"/>
+		
+		<img class="r" alt="잉" src="./images/bag.jpg" width="50" height="50">
+		
+		<p style="clear:both">파워링크‘종각역맛집’ 관련 광고입니다. 이 광고가 표시된 이유등록 안내 경복궁맛집 정통인도음식점 옴
+			www.omfood.kr 광화문, 마포/공덕, 수원광교 옴레스토랑에서 인도 정통의 맛과 분위기를 느껴보세요 미리보기 돋보기
+			링크이미지 엘키친 이탈리안 비스트로 map.naver.com/local/siteview.nhn?code=35... 파스타,
+			피자, 스테이크, 세트메뉴, 데이트, 테이블룸, 무료주차2시간 12,000원부터 파스타&리조또 메뉴 16,500원부터
+			피자메뉴 19,000원부터 한우&폭 스테이크 종각역 돈존 참나무장작구이 donzon.modoo.at 종각역 맛집, 모임장소,
+			오리 참나무장작구이 바베큐 및 통삼겹바베큐, 오리떡갈비. 링크이미지 종각역맛집 88선수촌 종각점
+			store.naver.com/restaurants/detail?id=... 김종국이 인정한 냉동 삼겹살과 두툼한 돼지껍데기
+			맛집</p>
+			
+	</div>
+	
+</body>
+</html>

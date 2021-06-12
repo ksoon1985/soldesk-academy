@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		var btnNode = document.getElementById("btn"); //dom 을 이용
+		var btnEle = $("#btn"); // jquery 
+		
+		document.write(btnNode + " , "+btnEle + "<br/>");
+		// [object HTMLButtonElement] , [object Object]
+		//                dom                   jquery
+		document.write($(btnNode)+ " , " + btnEle[0]);
+		// [object Object] , [object HTMLButtonElement]
+		// dom 을 jquery 로 jquery 를 dom 으로 ... 중요 !!!
+		
+	});
+</script>
+</head>
+<body>
+<button id="btn">commit</button>
+</body>
+</html>

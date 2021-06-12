@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+}
+
+h1{
+	width:0;
+	height:0; 
+	visibility:hidden;
+	text-indent:-2000px;
+}
+
+ul.mainMenu{
+	background-color:yellow;
+	width:1208px;
+	height:104px;
+	margin:auto;
+	border-left:2px solid black;
+}
+
+ul.mainMenu li{
+	list-style-type:none;
+	border:2px solid black;
+	border-left:0px;
+	float:left;
+}
+
+ul.mainMenu li a{
+	display:block;
+	width:300px;
+	height:100px;
+	text-indent:-2000px;
+}
+
+ul.mainMenu li.mail{
+	background-image:url('./images/mail.gif');
+}
+ul.mainMenu li.cafe{
+	background-image:url('./images/cafe.gif');
+}
+ul.mainMenu li.blog{
+	background-image:url('./images/blog.gif');
+}
+ul.mainMenu li.kin{
+	background-image:url('./images/kin.gif');
+}
+
+ul.mainMenu li.mail:hover{
+	/* +는 반복 때문에                right bottom*/
+	background-position: +300px 0;
+}
+
+ul.mainMenu li.cafe:hover{
+	/* +는 반복 때문에                right bottom*/
+	background-position: right bottom;
+}
+</style>
+
+
+</head>
+<body>
+	<h1>메뉴</h1>
+	<ul class="mainMenu">
+		<li class="mail"><a href="#">메일</a></li>
+		<li class="cafe"><a href="#">카페</a></li>
+		<li class="blog"><a href="#">블로그</a></li>
+		<li class="kin"><a href="#">지식in</a></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 어떤 요소의 전체 자식중에서 p라는 요소만 봤을때 (index)번째 자식 */
+/* p:nth-of-type(2){
+	background-color:red;
+} */
+
+/* 위에서 짝수일때 */
+/* p:nth-of-type(2n)
+{
+	background-color:red;
+}
+ */
+ 
+/* 위와 동일 */
+p:nth-of-type(even)
+{
+	background-color:red;
+}
+
+
+
+/*
+	nth-child(n)  	 : 모든 자식의 순서에서 찾음
+	nth-of-type(n)   : 해당하는 자식 태그 요소에서의 순서를 찾음
+*/
+</style>
+
+</head>
+<body>
+	<div>
+		<p>computer</p>
+		<span>test</span>
+		<p>monitor</p>
+		<p>television</p>
+		<p>desk</p>
+		<p>top</p>
+		<p>chair</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+// eval(String) 
+var data = eval("3+2"); // 수식의 결과를 숫자로 리턴 (type=number)
+document.write(typeof(data) + " data="+ data + "<br/>");
+
+data = eval("3"+"2"); // 문자열을 합쳐서 숫자로 리턴 (type=number)
+document.write(typeof(data) + " data="+ data + "<br/>");
+
+data = eval("3"); // 문자열을 숫자로 리턴 (type=number)
+document.write(typeof(data) + " data="+ data + "<br/>");
+
+data = eval("3")+eval("2"); // eval + eval (type=number)
+document.write(typeof(data) + " data="+ data + "<br/>");
+
+var m="3",p="2"; //(type=string)
+document.write(typeof(m+p) + " data="+ (m+p) + "<br/>");
+
+document.write("============================================="+"<br/>");
+var arr ='[1,2,3,4,5]'; 
+data = eval(arr); // string -> array(number)
+document.write(typeof(data) + " data="+ (data) + "<br/>");
+document.write(typeof(data[0]) + " data[0]="+ (data[0]) + "<br/>");
+document.write((data instanceof Array)+ "<br/>"); //true
+
+var obj = '{one:"java",two:"jsp"}';
+data = eval("("+obj+")");
+document.write(typeof data +" "+data+"<br/>"); //object [object object]
+document.write(typeof data.one +" "+data.two+"<br/>");// string jsp 
+
+</script>
+</body>
+</html>

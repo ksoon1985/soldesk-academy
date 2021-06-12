@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 
+		radio 버튼은 name속성 값이 모두 일치해야 한다.
+		name 속성이 같은 항목중 한 개만 선택이 가능하다.
+		
+		checkbox name속성의 값과는 상관없이 다중선택이 가능하다.
+		
+	 -->
+
+	<form action="html_019.jsp" method="post">
+	<h3>체크박스</h3>
+	자바<input type="checkbox" name="subject" 
+	value="Java" checked="checked">
+	C<input type="checkbox" name="subject" value="C">
+	php<input type="checkbox" name="subject" value="php">
+	
+	<br/>
+	
+	사과<input type="radio" name="fruit" 
+	value="apple" checked="checked">
+	메론<input type="radio" name="fruit" value="melon">
+	포도<input type="radio" name="fruit" value="graph">
+	
+	<input type="submit" value="submit">
+	</form>
+	
+</body>
+</html>

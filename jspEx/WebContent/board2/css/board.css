@@ -1,0 +1,22 @@
+table{
+	text-align :center;
+	line-height:1.5;
+	margin:auto;
+	width:1000px;
+}
+
+table.posts-no-exist tbody h4{
+	background:red;
+}
+
+table.posts-exist thead{
+	background:#1EF3DE;
+}
+
+table.posts-exist tbody{
+	background:#E0EEED;
+}
+
+h3.title{
+	text-align:center;
+}

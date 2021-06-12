@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+}
+
+.menulist {
+	width: 294px;
+	height: 34px;
+	background-color: yellow;
+	margin: auto;
+	border-left: 2px solid black;
+}
+
+dl.menulist dt {
+	/* 화면에 안보이도록 */
+	width: 0px;
+	height: 0px;
+	font-size: 0;
+	text-indent: -2000px;
+}
+
+dl.menulist dd {
+	float: left;
+	border: 2px solid black;
+	border-left-width: 0;
+}
+
+dl.menulist dd a {
+	display: block;
+	width: 96px;
+	height: 30px;
+	text-align:center;
+	line-height:30px;
+	text-decoration:none;
+	color:#000000;
+	font: bold 16px/30px nanumgothic,"굴림체",dotum,sanf-serif;
+	
+}
+
+dl.menulist dd a:hover{
+	text-decoration:underline;
+	color:red;
+	font-size:18px;
+}
+</style>
+
+</head>
+<body>
+	<dl class="menulist">
+		<dt>메뉴목록</dt>
+		<dd>
+			<a href="#">교육센터</a>
+		</dd>
+		<dd>
+			<a href="#">교육안내</a>
+		</dd>
+		<dd>
+			<a href="#">교육일정</a>
+		</dd>
+	</dl>
+</body>
+</html>

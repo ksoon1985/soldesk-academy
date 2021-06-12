@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 	var i=0;
+	window.onload = function(){
+		// setTimeout("실행할 스크립트",시간 간격);
+		//일정한 시간 후에 딱 한번만 실행이 된다.
+	var auto = window.setTimeout("console.log(++i)",3000);
+	};
+	 */
+	
+	 var i=0;
+	 window.onload = function(){
+	 var once = window.setTimeout(function(){
+	 document.getElementById("cnt").innerText = ++i;	 
+	 },2000);
+	 
+	 var btn = document.getElementById("stop");
+	 btn.onclick=function(){window.clearTimeout(once);};
+	 };
+</script>
+</head>
+<body>
+<div>
+	<p id="cnt">setTimeout</p>
+	<button id="stop">정지버튼</button>
+</div>
+</body>
+</html>

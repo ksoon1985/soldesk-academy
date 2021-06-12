@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+*{
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+.dv1{
+	background-color:yellow;
+	width:100px;
+	height:100px;
+}
+
+.dv2{
+	width:500px;
+	height:500px;
+	border:1px solid;
+	/* 초과될 경우 반복화됨 */
+	background-image:url('./images/gosu.jpg');
+	
+	/* 반복 제거 그냥 원본크기로만 나옴*/
+	background-repeat:no-repeat;
+	
+	/* 이미지를 가운데 아래로 배치*/
+	/* left center right , top center bottom*/
+	background-position: center center;
+	
+	/* 배경 색상 */
+	background-color:gray;
+}
+
+.dv3{
+	width:300px;
+	height:300px;
+	border:1px solid black;
+
+	background-image:url('./images/gosu.jpg');
+	background-repeat:no-repeat;
+	
+	/* 왼쪽에서 오른쪽으로 100px 위에서 아래로 50px*/
+	/* 요소 범위를 벗어나면(-) 안보임 */
+	background-position:100px -50px;
+	
+	/* 투명도 */
+	opacity:0.3;
+}
+
+.dv4{
+	width:300px;
+	height:400px;
+	
+/* 	bg-color bg-image position
+	/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit; */
+	
+	/*단축속성            bg-color		bg-img			  bg-size	bg-repeat*/
+	background: #ff0000 url('./images/gosu.jpg') 100px 50px no-repeat;
+}
+
+</style>
+
+</head>
+<body>
+	<div class="dv1">&nbsp;</div>
+	<div class="dv2">&nbsp;</div>
+	<div class="dv3">&nbsp;</div>
+	<div class="dv4">&nbsp;</div>
+</body>
+</html>

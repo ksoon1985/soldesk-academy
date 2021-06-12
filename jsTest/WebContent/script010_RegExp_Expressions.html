@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// RegExp : /e/ig 이런 형태 (/e/ = "e")
+		// 클라이언트 입력값 받을 때 사용자가 잘 입력했나 확인하기 위해 사용 됨(중요 ) 
+		// 사용 함수 test , exec
+		// test   : 잇으면 true 	없으면  false
+		// exec   : 있으면 문자 	없으면  null
+		// match  : 있으면 문자 	없으면  null
+		// search : 있으면 인덱스 	없으면  -1
+		var str = "The e Best thisgs in best life are best";
+		
+		var patt=/e/;
+		 
+		//test========================================================
+		//일치하는 값이 없으면 false를 리턴! 
+		document.write(patt.test(str)+"<br/>"); // true 
+		// match, search
+		document.write(str.match("e")+"<br/>"); // e 없으면 null
+		document.write(str.search("e")+"<br/>"); // 2 없으면 -1
+		
+		patt = /y/i;
+		document.write(patt.test(str)+"<br/>"); // false
+		
+		//exec========================================================
+		// 일치하는 값이 없으면 null을 리턴한다. 
+		document.write(patt.exec(str)+"<br/>"); // null
+		document.write(/e/.exec(str)+"<br/>"); // e
+		document.write(RegExp("e").exec(str)+"<br/>"); // e
+		
+		//              검색문자열   옵션 
+		var ex = new RegExp("F","ig");
+		document.write(ex.exec(str)+"<br/>"); // f
+		document.write(ex.test(str)+"<br/>"); // false
+
+	</script>
+</body>
+</html>

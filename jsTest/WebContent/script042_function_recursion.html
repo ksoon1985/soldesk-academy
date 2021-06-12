@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 재귀 함수  */
+	var num=0;
+	function testFun(){
+		num++;
+		document.write(num+"<br/>");
+		if(num==10) return;
+		
+		testFun();
+		document.write("===" +num+"===<br/>");
+		
+	}
+	testFun();
+</script>
+</head>
+<body>
+
+</body>
+</html>

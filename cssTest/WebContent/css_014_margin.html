@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+	border-width:0;
+}
+
+.wrap{
+	width:160px;
+	height:260px;
+	background-color: yellow;
+}
+
+.aa{
+	width:100px;
+	height:100px;
+	background-color:red;
+	border-top : 10px solid black;
+	border-bottom: 10px solid black;
+	margin-bottom: 10px;
+}
+.bb{
+	width:100px;
+	height:100px;
+	background-color:red;
+	border-top : 10px solid black;
+	border-bottom: 10px solid black;
+	margin-top:10px;
+}
+
+/* 
+	  margin 의 값이 겹칠땐 큰 값을 적용 시킴 
+	     같을 땐 하나만 적용이 됨 
+*/
+
+span.sp1{
+	background-color:aqua;
+	border: 1px solid black;
+	padding: 20px;
+}
+span.sp2{
+	background-color:lime;
+	margin:20px;
+}
+
+.inline{
+	background-color:maroon;
+	
+	/* overflow 된 것들의 내용이 감춰짐  */
+	overflow:hidden;
+}
+
+.cc{
+	background-color:green;
+}
+
+/* 중복된 margin 내에 컨텐츠가 없으면 하위 요소의 margin 값이 적용안되는 문제   */
+#m1{
+	width:100px;
+	height:99px;
+	background-color:blue;
+	margin:10px;
+	
+	/* #m2의 margin 값이 top에 적용되도록 하기 위해서 설정한다.  */
+	padding-top:1px;
+}
+
+#m2{
+	width:80px;
+	height:80px;
+	background-color:yellow;
+	margin:10px;
+}
+</style>
+
+</head>
+<body>
+	<div class="wrap">
+		<div class="aa">one</div>
+		<div class="bb">two</div>
+	</div>
+
+	<div class="inline">
+		<!-- span 에서 enter하면 띄어쓰기 가 적용됨  -->
+		<span class="sp1">span1</span>
+		<span class="sp2">span2</span>
+	</div>
+	<p class="cc">test test test test test</p>
+
+	<div id="m1">
+		<div id="m2">test</div>
+	</div>
+</body>
+</html>

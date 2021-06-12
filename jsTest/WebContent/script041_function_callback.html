@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+var color =["black","yellow","aqua","purple"];
+var i=0;
+var auto;
+
+// 콜백함수 : 이벤트가 발생된 후 수행될 함수 
+window.onload = function(){
+/* document.getElementsByTagName("button")[0].onclick = colorBg;	
+ */
+ var set = window.setInterval(colorBg,3000);
+ document.getElementsByTagName("button")[0].onclick = 
+	 function(){window.clearInterval(set);};
+};
+
+function colorBg(){
+	if(i>= color.length)
+		i = 0;
+	var bodyTag = document.getElementsByTagName("body")[0];
+	bodyTag.style.backgroundColor = color[i++];
+}
+
+</script>
+</head>
+<body>
+
+<button>background color change</button>
+
+</body>
+</html>

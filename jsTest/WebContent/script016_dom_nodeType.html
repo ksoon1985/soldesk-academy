@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="wrap">
+		<p>content1</p>
+		<p>content2</p>
+		<p>content3</p>
+		<span><a href="">이동</a></span>
+	</div>
+	
+	<script type="text/javascript">
+	var pNode = document.getElementsByTagName("p")[1];
+	document.write(pNode+"<br/>");
+	
+	// html - dom - element - nodeName, nodeType, nodeValue
+	document.write(pNode.nodeName +"<br/>"); // p 
+	document.write(pNode.nodeType +"<br/>"); // 1
+	//-> 1 : element, 2 : attr, 3 : text
+	document.write(pNode.nodeValue +"<br/>"); // null
+	//-> 1 : null, 2 : attr value, 3: content of node
+	
+	document.write(pNode.nextSibling.nodeName + "<br/>"); // #text
+	document.write(pNode.nextSibling.nodeType + "<br/>"); // 3
+	document.write(pNode.nextSibling.nodeValue + "<br/>"); //
+	
+	var divAttr = document.getElementById("wrap").attributes[0];
+	document.write(divAttr + "<br/>"); //[object Attr]
+	
+	document.write(divAttr.nodeName + "<br/>"); // id
+	document.write(divAttr.nodeType + "<br/>"); // 2
+	document.write(divAttr.nodeValue + "<br/>"); // wrap
+	
+	var textNode = document.getElementsByTagName("a")[0];
+	document.write(textNode.nodeName + "<br/>"); // a
+	document.write(textNode.nodeType + "<br/>"); // 1
+	document.write(textNode.nodeValue + "<br/>"); // null
+	textNode = textNode.firstChild;
+	document.write(textNode.nodeName + "<br/>"); // #text
+	document.write(textNode.nodeType + "<br/>"); // 3
+	document.write(textNode.nodeValue + "<br/>"); // 이동
+	
+	
+	</script>
+</body>
+</html>

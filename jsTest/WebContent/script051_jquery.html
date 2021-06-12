@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	$("button").parent().css("width","200px").css("heigth","200px").
+	css("border","1px solid black");
+	// button 의 parent 는 div
+	
+	$("ul").children().css({"list-style-type":"none"}).css({"color":"red"});
+	// ul 의 자식들은 li 요소들 
+	
+	$("ul").prev().css({"background-color":"aqua"});
+	// ul 의 이전 요소 는 button
+	$("ul").next().css({"background-color":"yellow"}); 
+	// ul 의 다음 요소 는 p 
+	
+	/* $("li:even").css({"border":"2px solid black"}).css("color","blue"); */
+	// li 요소들중 짝수 인덱스  index 0부터 시작 
+	$("li:nth-child(even)").css({"border":"2px solid green"});
+	// index 1부터 시작 
+});
+</script>
+</head>
+<body>
+<div id="wrap">
+	<button id="btn">click</button>
+	<ul>
+		<li>list1</li>
+		<li>list2</li>
+		<li>list3</li>
+		<li>list4</li>
+	</ul>
+	<p>line</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 	function outer(){
+		var num = 10;
+		function inner(){
+			document.write(num);
+		};
+		inner();
+	};
+	outer(); */
+	// 클로저(closure)는 외부함수가 종료가 되더라도 내부함수를 통해 외부에서
+	// 외부함수의 자원을 참조 할 수 있는 함수이다.
+	
+	function outer(){
+		var sum = 50;
+		
+		return function(){return sum;}; // 리턴값을 준다
+	};
+	
+	var result = outer();
+	document.write(result); //function(){return sum;}
+	document.write("<hr/>");
+	document.write(result()); // 50
+	
+	
+</script>
+</head>
+<body>
+	
+</body>
+</html>

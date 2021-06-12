@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" name="data" id="data" />
+	<div id="dv"></div>
+	
+	<script type="text/javascript">
+	document.getElementById("data").value = "value속성 "; // value속성 
+	document.getElementById("dv").innerText="<p>Text</p>"; //문자열 <p>Text</p>
+	document.getElementById("dv").innerHTML="<p>Text</p>"; //Text  
+	// innerHTML ->요소를 적용함 
+	
+	console.log(document.getElementById("data").value); // value속성 
+	console.log(document.getElementById("dv").innerText); // Text
+	console.log(document.getElementById("dv").innerHTML); // <p>Text</p>
+	
+	
+	</script>
+</body>
+</html>

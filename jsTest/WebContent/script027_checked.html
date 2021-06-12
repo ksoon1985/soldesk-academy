@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	
+	document.frm.onsubmit = function(){
+	var admin = document.frm.admin;
+	if(!admin.checked){ // checkbox -> check로 확인 
+		alert("약관에 동의해야 합니다.");
+		return false; 
+	  }
+	};
+	
+	document.frm.allCheck.onclick = function(){
+		//alert(this.checked); // this = document.frm.allCheck
+		document.frm.subject1.checked = this.checked;
+		document.frm.subject2.checked = this.checked;
+		document.frm.subject3.checked = this.checked;
+	};
+};// end onload
+
+</script>
+</head>
+<body>
+	<form name="frm" action="#" method="get">
+		<textarea rows="3" cols="20">
+		</textarea>
+		<br/>
+		<input type="checkbox" name="admin" />약관에 동의합니다.<br/>
+		<hr/>
+		<input type="checkbox" name="allCheck" id="allCheck" />전체 선택.<br/>
+		<input type="checkbox" name="subject1" id="subject1" />과목1.<br/>
+		<input type="checkbox" name="subject2" id="subject2" />과목2.<br/>
+		<input type="checkbox" name="subject3" id="subject3" />과목3.<br/>
+		<input type="submit" value="commit" />
+	</form>
+</body>
+</html>

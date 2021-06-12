@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<style type="text/css">
+
+/*a라는 요소에서 가상 클래스가  link(이미 정의가 되어 제공이 되있음 )*/
+/* 한번도 방문하지 않았을 때 */
+a:link{
+	color:red;
+}
+
+/* visited link 이미 방문했을 때*/
+a:visited{
+	color:green;
+}
+
+/* mouse over link 마우스 갖다 댈 때*/
+a:hover{
+	color:hotpink;
+}
+
+/* selected link 누르고 있을 때*/
+a:active{
+	color:blue;
+}
+
+/* pseudo class를 작성할 때 
+   link -> visited -> hover -> active 
+       순으로 작성한다
+*/
+
+</style>
+
+
+</head>
+<body>
+	<a href="http://www.w3schools.com">W3Schools</a>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+/* 
+ 			재선언	재할당
+ 	var		 o		 o
+ 	let		 x 		 o
+ 	const 	 x		 x
+
+ 	//호이스팅=======================================================
+ 	var , function 선언문등을 해당 스코프의 선두로 옮긴 것처럼
+	동작하는 특성을 말한다.
+	
+ 	일반적으로 변수는 선언 > 초기화 > 할당 단계를 거친다.
+	
+ 	//var 은 선언 과 초기화 단계가 한번에 이루어짐
+ 	// 스코프 선두에서 선언단계와 초기화 단계가 실행됨.
+ 	// -> 따라서 변수 선언문 이전에 변수를 참조 가능 
+	console.log(foo); -> undefined 
+	var foo; -> 선언 과 초기화 단계 -> undefined
+ 	console.log(foo); -> undefined
+ 	foo = 1; -> 할당단계 
+ 	console.log(foo);  ->1
+ 	
+ 	//let 은 선언 과 초기화 가 분리되어 진행됨 
+ 	// 스코프 선두에서 선언단계가 실행됨 
+ 	// 아직 변수가 초기화(메모리 공간 확보 와 undefined 로 초기화)되지 않음
+ 	// 따라서 변수 선언 이전에 변수를 사용 불가능
+ 	console.log(foo); -> referenceError : foo is not defined
+ 	let foo; -> 이제 초기화가 됨
+ 	console.log(foo); -> undefined
+ 	foo =1;
+ 	console.log(foo); -> 1
+*/
+
+
+</script>
+</body>
+</html>

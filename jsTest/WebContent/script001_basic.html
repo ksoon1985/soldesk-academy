@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+/* 
+JavaScript 실행 순서 *중요크* ==============================================
+	자바스크립트는 HTML과 CSS가 결합되고, 웹페이지 상에 올려진 후, 
+	브라우저의 자바스크립트 엔진에 의해 실행된다. 
+	이는 페이지의 구조와 스타일 등을 정해놓고, 자바스크립트가 실행된다는 것과 같은 의미이다. 
+
+	동적으로 사용자 인터페이스를 업데이트하는 자바스크립트의 사용은 
+	Document Object Model API를 통해 HTML과 CSS를 수정하는 것으로 좋은 현상이다. 
+	만약 자바스크립트가 HTML과 CSS 전에 실행되었다면 문제가 분명 발생할 것이다. 
+
+	브라우저에서 자바스크립트를 만났을 때 일반적으로 위에서 아래로 실행된다.
+
+
+JavaScript 넣는 방법 =====================================================
+1. 내부(head안)
+	대체적으로 함수를 넣음 
+2. 내부(body안)
+	함수를 콜 할 때 나 html 렌더링에 문제가 가지 않게 
+3. 외부 
+	<script src="script.js"><script>해주면 댐 
+	헤드에서 바디에서 할진 ...?		
+*/
+
+
+//====================================================================
+//data type
+var num=10; // number
+var str = "javascript"; // string
+var check = true; // boolean
+var data; // undefined undefined  
+var ko = null; // object
+var arr=[10,20,30]; // object
+var rect = {width:10, height:20}; // object 
+var add = function(){return "val"}; // add : function ,add() : string 
+
+var nam = [{width:10},{height:20}];
+document.write(nam[1].height);
+
+//좌변 혹은 우변이 문자열이면 문자열로 바뀜
+var x = 10;
+var y = 20;
+var z = "30";
+
+var a = x + z;
+var b = z + x;
+var c = x + true; // 11 number타입으로 
+var d = x + false;
+
+//리터널(liternal) : 자체의 값 -> 값을 바꿀땐 변수를 이용 
+var b = 4;
+
+var x = 10;
+var y = "10";
+var k = 'k';
+
+//값과 타입을 비교
+document.write((x===y)+'<br/>'); //false
+document.write((x!==y)+'<br/>'); //true
+
+//값만 비교  
+document.write((x==y)+'<br/>'); // true
+document.write((x!=y)+'<br/>'); //false
+
+document.write("================================================="+"<br/>");
+var rect={width:10, height:20};
+var arr = [10,20.30];
+var nn = new Number(10); // Number객체 생성 
+document.write((typeof rect) + "<br/>"); // object
+document.write((rect instanceof Object) + "<br/>"); //true
+document.write((typeof arr) + "<br/>"); // object
+document.write((arr instanceof Array) + "<br/>"); //true
+
+document.write((typeof x) + "<br/>"); // number -> 절차 지향적
+document.write((typeof nn) + "<br/>"); 
+	// type: object , instance : Number ->객체 지향적 
+document.write((nn instanceof Number) + "<br/>"); //true
+//-> ** typeof 했을 때 object 로 나온것만 instanceof 로 타입을 알 수 있다.
+document.write((x.valueOf()) + "<br/>"); //10
+document.write((y.valueOf()) + "<br/>"); //10
+document.write( typeof x.valueOf() + "<br/>"); //number
+document.write( typeof y.valueOf() + "<br/>"); //string
+document.write( typeof parseInt(y) + "<br/>"); //number
+document.write(Number(k) + "<br/>"); // NaN
+document.write(parseInt(k) + "<br/>"); // NaN
+document.write((typeof Number(k)) + "<br/>"); // Nan -> number 
+
+document.write("================================================="+"<br/>");
+var key = 2;
+switch(key){
+case 1: document.write(1); break;
+case 2: document.write(2); /* break; */
+case 3: document.write(3); break;
+case 4: document.write(4); break;
+case 5: document.write(5); break;
+default : document.write(12345);
+}
+document.write("<br/>");
+document.write("================================================="+"<br/>");
+
+
+var arr = [1,2,3,4,5];
+var dect = {a:1,b:2,c:3,d:4,e:5};
+for(var i=0;i<arr.length;i++)
+	document.write(arr[i]);
+document.write('<br/>');
+for(var prop in arr) // ==  for(int element : arr)
+	document.write(arr[prop]);
+document.write('<br/>');
+for(var prop in dect)
+	document.write(dect[prop]);
+document.write('<br/>');
+document.write(dect.a); // == document.write(dect['a']);
+document.write('<br/>');
+
+var j=0;
+var txt;
+while(j<arr.length){
+	document.write(arr[j]);
+	j++;
+}
+
+/*
+var arr = [1,2,3,4,5];
+var odd=0; // 홀수
+var even=0;// 짝수
+
+for(var index=0 in arr)
+{
+	if(arr[index] %2 ==0)
+		even += arr[index];
+	else
+		odd += arr[index];
+}
+document.write(even,odd);
+*/
+
+
+</script>
+
+</head>
+<body>
+<p id="carId">car</p>
+
+
+<script type="text/javascript">
+var carName = "Volvo";
+document.getElementById("carId").innerHTML += ": " + carName ;
+</script>
+
+</body>
+</html>

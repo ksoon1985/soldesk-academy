@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+table{background-color:yellow ; width:500px; margin:auto;}
+table,th,td{ border:1px solid black ; border-collapse:collapse; text-align:center;}
+</style>
+
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th rowspan="2">교실</th>
+				<th colspan="2" id="s">수강생</th>
+			</tr>
+			<tr>
+				<th id="m">남</th><th>여</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<th id="L1">L1반</th>
+				<!-- 수강생 남 L1반 10 => 장애인들을 위해? -->
+				<td headers="s m L1">10</td>
+				<!-- 수강생 여 L1반 5 -->
+				<td headers="s w L1">5</td>
+			</tr>
+			
+		</tbody>
+	</table>
+</body>
+</html>
