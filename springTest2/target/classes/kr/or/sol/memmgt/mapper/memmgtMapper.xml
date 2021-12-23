@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace ="model2.memmgt">
+	
+	<insert id="signUpMember" parameterType="mdto" >
+		<selectKey keyProperty="memseq" order="BEFORE" resultType="int">
+			select nvl(max(memseq),0) + 1 memseq from memtb
+		</selectKey>
+	
+		insert into memtb(memid,memseq,memname,memtel,
+		membirth,regdate,mememail,memgender,mempasswd) 
+		values(#{memid},#{memseq},#{memname},#{memtel},
+		#{membirth},sysdate,#{mememail},#{memgender},#{mempasswd})
+		
+	</insert>
+	
+	<select id="idCheck" parameterType="mdto" resultType="int" >
+		select count(*) from memtb where memid = #{memid}
+	</select>
+	
+	<select id="idCheck2" parameterType="String" resultType="Integer" >
+		select count(*) from memtb where memid = #{userid}
+	</select>
+	
+	
+	<select id="allCount" resultType="int">
+		select count(*) allcnt from memtb 
+	</select>
+	
+	<select id="memList" parameterType="list" resultType="mdto">
+		select a.*
+		from (select rownum rr, rmember.* 
+			from (select memid,memseq,memname,memtel,membirth,regdate,mememail,memgender,mempasswd 
+		        from memtb 
+		       		order by memseq asc) rmember ) a
+	<!-- <choose>
+			<when test="memid!=null and memid!=0">
+				where memid = #{memid}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose> -->
+	</select>
+	 
+	<select id="memInfo" parameterType="mdto" resultType="mdto">
+		select * from memtb where memseq = #{memseq}
+	</select>
+	
+	<update id="updateMember"  parameterType="mdto">
+		
+		update memtb set 
+		memid = #{memid},
+		memname = #{memname},
+		memtel = #{memtel},
+		membirth = #{membirth},
+		regdate = #{regdate},
+		mememail = #{mememail},
+		memgender = #{memgender},
+		mempasswd = #{mempasswd} 
+		where memseq = #{memseq}
+		
+	</update>
+	
+	<delete id="deleteMember" parameterType="mdto">
+	    delete from memtb where memseq = #{memseq}
+	</delete>
+</mapper>
