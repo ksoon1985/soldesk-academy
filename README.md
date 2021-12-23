@@ -1,2 +1,2 @@
 # soldesk
-soldesk study
+soldesk academy study
